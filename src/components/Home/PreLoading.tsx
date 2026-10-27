@@ -5,7 +5,7 @@ import { spectralBridgeRegular } from "@/fonts/font";
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
 
 function PreLoading({ count }: { readonly count: number }) {
-  const name = "John";
+  const name = "Aurexis";
   const EASING = [0.83, 0, 0.17, 1];
 
   const bgVariant = {
@@ -52,7 +52,7 @@ function PreLoading({ count }: { readonly count: number }) {
     <AnimatePresence>
       {count > 4 && (
         <motion.section
-          className="z-[100] relative bg-lightBg dark:bg-darkBg w-full h-screen flex items-end justify-center overflow-hidden"
+          className="z-[100] fixed inset-0 bg-lightBg dark:bg-darkBg w-full h-screen flex items-end justify-center overflow-hidden"
         >
           {name.split("").map((nom, i) => {
             return name[i] === "i" ? (
@@ -86,7 +86,7 @@ function PreLoading({ count }: { readonly count: number }) {
                       ease: [0.65, 0, 0.35, 1]
                     },
                   }}
-                  className={`${spectralBridgeRegular.className} uppercase text-[29.5vw] leading-[.85] tracking-tight mb-[-.2em]`}
+                  className={`${spectralBridgeRegular.className} uppercase text-[17vw] leading-[.85] tracking-tight mb-[-.2em]`}
                 >
                   {nom}
                 </motion.p>
@@ -111,7 +111,7 @@ function PreLoading({ count }: { readonly count: number }) {
                       ease: [0.65, 0, 0.35, 1]
                     },
                   }}
-                  className={`${spectralBridgeRegular.className} uppercase text-[29.5vw] leading-[.85] tracking-tight mb-[-.2em]`}
+                  className={`${spectralBridgeRegular.className} uppercase text-[17vw] leading-[.85] tracking-tight mb-[-.2em]`}
                 >
                   {nom}
                 </motion.p>

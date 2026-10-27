@@ -66,7 +66,7 @@ function ProcessTransition() {
           <div className="mt-10 mb-[6vh] flex md:mt-6 md:mb-0">
             <div className="flex-1 block md:hidden"></div>
             <div className="flex-[2]">
-              <Paragraph text="I ensure to provide honesty and transparency for my clients from start to finish. With regular updates and check ups, I provide assurance for my clients so that they’re not left in the dark and so that communication is maintained throughout the design and/or development process. We don’t proceed to the next step until the client is satisfied about the outcome of what they’re investing in. " />
+              <Paragraph text="Projects start with a conversation about your brand, customers and goals. From there we agree a written scope, keep you updated at every stage and explain decisions in plain language. Pricing is quoted per project once we understand what you need." />
             </div>
           </div>
         </div>
@@ -91,8 +91,8 @@ function ProcessTransition() {
             className="mt-6"
           >
             <div className="flex justify-between py-1 border-b-[1px] border-b-lightText20 dark:border-b-darkText20">
-              <Heading text="offer to clients" />
-              <Heading text="starting" />
+              <Heading text="how we work with clients" />
+              <Heading text="engagement" />
             </div>
             {offers.map((offer, i) => {
               return (
@@ -123,12 +123,12 @@ function ProcessTransition() {
   );
 }
 
-function Listings({ service, price }: { service: string; price: number }) {
+function Listings({ service, price }: { service: string; price: string }) {
   return (
     <div className="py-2 border-b-[1px] border-b-lightText20 dark:border-b-darkText20 flex justify-between items-center">
       <p className="text-[17px] 2xl:text-[28px]">{service}</p>
       <p className="text-[17px] 2xl:text-[28px]">
-        $ {Intl.NumberFormat("en-US").format(price)}
+        {price}
       </p>
     </div>
   );

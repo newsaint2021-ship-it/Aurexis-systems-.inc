@@ -4,6 +4,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { spectralBridgeRegular } from "@/fonts/font";
 import { motion, AnimatePresence } from "framer-motion";
+import { primaryNav } from "@/utils/site";
 
 type Open = {
   readonly menuOpen: boolean;
@@ -11,28 +12,7 @@ type Open = {
 };
 
 function Menu({ menuOpen, setMenuOpen }: Open) {
-  const navLinks = [
-    {
-      route: "/",
-      title: "home",
-    },
-    {
-      route: "/about",
-      title: "about",
-    },
-    {
-      route: "/#works",
-      title: "works",
-    },
-    {
-      route: "/#services",
-      title: "services",
-    },
-    {
-      route: "/contact",
-      title: "contact",
-    },
-  ];
+  const navLinks = primaryNav;
 
   const primaryEasing = [0.83, 0, 0.17, 1];
   const secondaryEasing = [0.65, 0, 0.35, 1];
@@ -63,6 +43,10 @@ function Menu({ menuOpen, setMenuOpen }: Open) {
               ? "visible bg-lightText dark:bg-darkText"
               : "invisible bg-lightBg dark:bg-darkBg"
           } origin-top-right z-[100] fixed top-0 left-0 w-full h-screen `}
+          id="site-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site menu"
         >
           <motion.div
             initial={{
@@ -103,17 +87,23 @@ function Menu({ menuOpen, setMenuOpen }: Open) {
               exit={{ opacity: 0, transition: { delay: 0 } }}
               className="flex justify-center"
             >
-              <XMarkIcon
+              <button
+                type="button"
                 onClick={() => setMenuOpen(false)}
-                className="w-[12vw] sm:w-[10vw] md:w-[8vw] lg:w-[6vw] text-lightText dark:text-darkText cursor-pointer"
-                strokeWidth={0.8}
-              />
+                aria-label="Close menu"
+              >
+                <XMarkIcon
+                  aria-hidden="true"
+                  className="w-[12vw] sm:w-[10vw] md:w-[8vw] lg:w-[6vw] text-lightText dark:text-darkText cursor-pointer"
+                  strokeWidth={0.8}
+                />
+              </button>
             </motion.div>
-            <nav className="mt-10">
+            <nav className="mt-10" aria-label="Main">
               <ul>
                 {navLinks.map((link, i) => {
                   return (
-                    <div
+                    <li
                       key={link.title}
                       className="flex items-start justify-center hover:gap-7 duration-300 gap-5"
                     >
@@ -139,7 +129,7 @@ function Menu({ menuOpen, setMenuOpen }: Open) {
                       </div>
                       {/* THE NAVIGATION TEXTS */}
                       <Link href={link.route}>
-                        <motion.li
+                        <motion.span
                           initial={{ visibility: "hidden" }}
                           animate={{
                             visibility: "visible",
@@ -149,7 +139,7 @@ function Menu({ menuOpen, setMenuOpen }: Open) {
                             },
                           }}
                           exit={{ visibility: "hidden" }}
-                          className={`${spectralBridgeRegular.className} relative px-3 text-[16vw] overflow-hidden sm:text-[13vw]  md:text-[10vw]
+                          className={`${spectralBridgeRegular.className} relative block px-3 text-[16vw] overflow-hidden sm:text-[13vw]  md:text-[10vw]
                     lg:text-[8vw] xl:text-[6vw] leading-[1] uppercase text-lightText dark:text-darkText text-center
                     hover:after:scale-x-100 after:duration-700 after:origin-left after:absolute after:scale-x-0 
                     after:transform after:translate-x-[-50%] after:translate-y-[-50%] after:top-1/2 after:left-1/2 after:content-lightSlash 
@@ -173,7 +163,7 @@ function Menu({ menuOpen, setMenuOpen }: Open) {
                           >
                             {link.title}
                           </motion.span>
-                        </motion.li>
+                        </motion.span>
                       </Link>
                       {/* ODD NUMBERS ON THE RIGHT */}
                       <div className="overflow-hidden">
@@ -195,7 +185,7 @@ function Menu({ menuOpen, setMenuOpen }: Open) {
                           >{`( ${i + 1} )`}</motion.p>
                         ) : null}
                       </div>
-                    </div>
+                    </li>
                   );
                 })}
               </ul>

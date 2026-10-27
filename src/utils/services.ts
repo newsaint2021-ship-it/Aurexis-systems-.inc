@@ -6,58 +6,57 @@ import Image4 from "../../public/images/services/list/serviceList_4.jpg"
 
 const services = [
     {
-        title: "Frontend Development",
+        title: "Website Development",
+        href: "/services/web-development",
         technologies: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "TypeScript",
-            "react.js",
-            "next.js",
-            "tailwind",
-            "SEO",
-            "GSAP",
-            "Framer Motion",
-            "Lenis Scroll",
-            "git",
+            "Brand websites",
+            "Multi-page sites",
+            "Redevelopment",
+            "Responsive UI/UX",
+            "CMS",
+            "Accessibility",
         ],
-        description: "With frontend, I'm able to combine both my design capabilities with my problem-solving skills, and as I code, I am extensively exercising both simulataneously. I lean more into React frameworks, mainly Next.js, which allows me to increase web performance, optimize images and media much easier, and improve SEO rankings, and TypeScript for catching bugs and discrepanicies early, ensuring that my code is error-free and correct throughout.",
+        description: "Brand-led marketing and business websites, designed for mobile first and built on a fast, maintainable foundation. Performance, accessibility and SEO are part of the build, not add-ons.",
         image: Image2
     },
     {
-        title: "Backend Development",
+        title: "E-commerce",
+        href: "/services/ecommerce",
         technologies: [
-            "node.js",
-            "JavaScript",
-            "TypeScript",
-            "next.js",
-            "supabase",
-            "firebase",
-            "express",
-            "mongoDB"
+            "Storefront design",
+            "Collections",
+            "Variants & sizing",
+            "Mobile shopping",
+            "Checkout",
+            "Product SEO",
         ],
-        description: "Along with frontend, I am also knowledgable in implementing backend services to my projects to truly create a full-force application. I lean towards BaaS (backend-as-a-service) due to its overall efficiency in creating and maintaining databases that help me deliver real-world applications with less headache so that I can quicken the development process.",
+        description: "Online stores that present products properly and make buying easy. We plan collections, variants, sizing and checkout around how your customers shop, and confirm payment and shipping integrations during scoping.",
         image: Image1
-        
     },
     {
-        title: "UI Design",
+        title: "SEO & Analytics",
+        href: "/services/seo",
         technologies: [
-            "Figma",
-            "Color Theory",
-            "Wireframe",
+            "Technical SEO",
+            "Structured data",
+            "Product pages",
+            "Search Console",
+            "Reporting",
         ],
-        description: "I always start my projects with Figma because it's important to know the direction before coding can ensue. I typically find inspiration from Pinterest and Awwwards, and I design my wireframes and mockups based on the moodboard that I formulate as well as on my intuition. Being a detail-oriented person, I meticulously select the appropriate typography, color scheme, and design layout that best conveys the theme of the application that I wish to build.",
+        description: "Ongoing technical and on-page optimisation, with measurement set up so you can see what is working. We report progress honestly and prioritise improvements by likely impact. No rankings are guaranteed.",
         image: Image3
     },
     {
-        title: "Brand Identity",
+        title: "Dashboards & Integrations",
+        href: "/services/dashboards-analytics",
         technologies: [
-            "Figma",
-            "Artboard",
-            "Brand guidelines",
+            "Custom dashboards",
+            "API integrations",
+            "Data sync",
+            "Lead workflows",
+            "Automation",
         ],
-        description: "Though I don't specialize in brand design, I have gained an avid interest in it, stemmed from my love of creating things. I like to find more ways to build on my skillset, even if that's outside of coding. I believe that it's important to be able to market a product in such a way that customers would be intrigued and encouraged to invest in that product, ensuring that the text, images, and mockups for the brand flow together.",
+        description: "Custom engineering for growing businesses: dashboards that bring sales, stock and customer data together, and integrations that connect your existing tools. Each project is scoped after a feasibility assessment.",
         image: Image4
     },
 ]

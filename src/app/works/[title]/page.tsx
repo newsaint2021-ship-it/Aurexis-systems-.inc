@@ -1,34 +1,58 @@
 import React from "react";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { allProjects } from "@/utils/works";
+import { titleConverter } from "@/utils/workTitleConverter";
 import MainPage from "@/components/WorkDetail/MainPage";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import PageShell from "@/components/PageShell";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
-function WorkDetail({
-  params,
-}: {
-  readonly params: { readonly title: string };
-}) {
-  const title: string[] = [];
+type Props = { readonly params: { readonly title: string } };
 
-  // Input => params: { title: 'oracle%20music' }; expected output => 'Oracle Music'
-  params.title.split("%20").forEach((char) => {
-    // converts lowercase to capitalized form
-    title.push(char.charAt(0).toUpperCase() + char.slice(1));
-  });
+function findProjectIndex(param: string) {
+  const title = decodeURIComponent(param).toLowerCase();
+  return allProjects.findIndex((item) => item.title.toLowerCase() === title);
+}
 
-  // Find index where project title matches with the array outputs after
-  // array is converted to string using 'join'
-  let index = allProjects.findIndex((item) => item.title === title.join(" "));
+export function generateStaticParams() {
+  return allProjects.map((project) => ({
+    title: titleConverter(project.title),
+  }));
+}
+
+export function generateMetadata({ params }: Props): Metadata {
+  const project = allProjects[findProjectIndex(params.title)];
+  if (!project) return {};
+  const description =
+    project.description1?.[0]?.slice(0, 155) ?? `${project.title} project.`;
+  return {
+    title: `${project.title} — Work`,
+    description,
+    alternates: {
+      canonical: `/works/${encodeURIComponent(titleConverter(project.title))}`,
+    },
+  };
+}
+
+function WorkDetail({ params }: Props) {
+  const index = findProjectIndex(params.title);
+  if (index === -1) notFound();
+  const project = allProjects[index];
 
   return (
-    <div className="px-[6vw]">
-      <Navbar />
-      <main>
-        <MainPage project={allProjects[index]} index={index} />
-      </main>
-      <Footer />
-    </div>
+    <PageShell>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Work", path: "/work" },
+          {
+            name: project.title,
+            path: `/works/${encodeURIComponent(titleConverter(project.title))}`,
+          },
+        ]}
+      />
+      <MainPage project={project} index={index} />
+    </PageShell>
   );
 }
 

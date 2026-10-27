@@ -12,41 +12,60 @@ import ProcessTransition from "./ProcessTransition";
 import Process from "./Process";
 import FooterTransition from "./FooterTransition";
 import ProcessParagraph from "./ProcessParagraph";
+import Industries from "./Industries";
+
+// The preloader plays from 10 down to 4, then animates out.
+const PRELOADER_START = 10;
+const PRELOADER_EXIT = 4;
 
 function MainPage() {
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(PRELOADER_START);
 
   useEffect(() => {
-    let timer = setInterval(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setCount(0);
+      return;
+    }
+
+    const timer = setInterval(() => {
       setCount((prev) => {
-        if (prev === 0) {
+        if (prev <= 0) {
           clearInterval(timer);
           return 0;
-        } else return prev - 1;
+        }
+        return prev - 1;
       });
     }, 1000);
+
+    return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    if (count === PRELOADER_EXIT) window.scrollTo(0, 0);
+  }, [count]);
+
+  // Keep the preloader mounted briefly after its exit begins so its exit animation can finish.
+  const preloaderActive = count > PRELOADER_EXIT - 2;
 
   return (
     <>
-      {count > 0 ? (
-        <PreLoading count={count} />
-      ) : (
-        <div className="px-[6vw]">
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Works />
-            <Services />
-            <ProcessParagraph/>
-            <ProcessTransition />
-            <Process/>
-            <FooterTransition/>
-          </main>
-          <Footer />
-        </div>
-      )}
+      {preloaderActive ? <PreLoading count={count} /> : null}
+      {/* Content is always rendered so it is present in the server HTML; the preloader overlays it. */}
+      <div className="px-[6vw]" aria-hidden={count > PRELOADER_EXIT}>
+        <Navbar />
+        <main id="main">
+          <Hero ready={count <= PRELOADER_EXIT} />
+          <About />
+          <Works />
+          <Services />
+          <Industries />
+          <ProcessParagraph />
+          <ProcessTransition />
+          <Process />
+          <FooterTransition />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

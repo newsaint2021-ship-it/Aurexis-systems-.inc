@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import StarSpin from "../StarSpin";
 import Banner from "../Banner";
+import Link from "next/link";
 
 type List = {
   services: Services;
@@ -38,11 +39,17 @@ const ServicesList = forwardRef<HTMLDivElement, List>(({ services }, ref) => {
     >
       <div className="flex items-center gap-8">
         <StarSpin classNameSize="w-[36px] 2xl:w-[50px]" />
-        <h6
+        <h3
           className={`${spectralBridgeRegular.className} text-[36px] 2xl:text-[50px] leading-[1]`}
         >
-          {services.title}
-        </h6>
+          {services.href ? (
+            <Link href={services.href} className="hover:italic duration-300">
+              {services.title}
+            </Link>
+          ) : (
+            services.title
+          )}
+        </h3>
       </div>
       <div className="mt-16 md:mt-auto xs:pl-[10vw] md:pl-0">
         <div className="w-full sm:w-[85%] md:w-full xl:w-[80%]">

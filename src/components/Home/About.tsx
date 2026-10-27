@@ -49,13 +49,13 @@ function About() {
   });
 
   // fresh span
-  const topline1 = "I promote fresh and creative";
+  const topline1 = "Premium digital experiences,";
   // ideas span
-  const topline2 = "ideas and bring them to life.";
+  const topline2 = "engineered for real businesses.";
   // deliver span
-  const bottomline1 = "With my skills, I deliver quality";
+  const bottomline1 = "Designed around your brand,";
   // finish span
-  const bottomline2 = "products from start to finish.";
+  const bottomline2 = "built to sell and be found.";
 
   const appear = {
     initial: {
@@ -118,11 +118,11 @@ function About() {
         <div className="xs:flex-[1] hidden xs:block"></div>
         <div className="xs:flex-[2.5] md:flex-[1.2] flex flex-col sm:flex-row gap-8">
           <div className="flex-1">
-            <Paragraph text="As a designer and creative developer, I prioritize aesthetics and functionality, implementing foundational SEO practices to build traffic. When sifting through my projects, you might find a bit of my personality in my designs. I like to put personal touches to my works, leading them to stand out amongst other websites. " />
+            <Paragraph text="Aurexis is a design-led studio with strong technical foundations. We focus on websites and e-commerce for fashion labels, clothing brands and premium retailers, where presentation and performance both matter." />
           </div>
           <div className="flex-1">
             <div className="">
-              <Paragraph text="This subsequentally helps to separate my clients from other competitors. I lead with empathy to create a sense of comfort for my clients, especially small businesses that are still building and might not have it all figured out yet. Quality will always come before quantity. " />
+              <Paragraph text="Every project is built with performance, accessibility and search visibility in mind from the start. Once you are live, we can keep improving the site through SEO, analytics and ongoing maintenance." />
             </div>
           </div>
         </div>

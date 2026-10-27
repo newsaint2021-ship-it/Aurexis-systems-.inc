@@ -7,8 +7,8 @@ import AboutMain from "../../../public/images/general/about/aboutIntro3.jpg";
 import { easeInOut, motion } from "framer-motion";
 
 function Intro() {
-  const line1 = "Turning innovative";
-  const line2 = "ideas into products";
+  const line1 = "A design-led studio";
+  const line2 = "with engineering depth";
 
   const imageRef = useRef(null);
 
@@ -94,7 +94,7 @@ function Intro() {
               >
                 <Image
                   src={AboutMain}
-                  alt="a cocktail with a quote around it"
+                  alt="a cocktail styled as an editorial still life"
                   className="w-full"
                   placeholder="blur"
                   ref={imageRef}
@@ -110,10 +110,9 @@ function Intro() {
             className="sm:w-[65%] lg:w-[50%] mt-8"
           >
             <Paragraph
-              text="Remember how far you’ve come, not just how far you have to go. You are not where you want to be, but neither are you where you used to be"
+              text="Aurexis Systems designs and builds websites and online stores for fashion labels, clothing brands and premium retailers. We care about how a brand looks online and about the engineering that keeps it fast, findable and easy to run."
               className="text-center"
             />
-            <Paragraph text="- Rick Warren" className="text-right mt-2" />
           </motion.div>
         </div>
       </div>

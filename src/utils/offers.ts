@@ -1,34 +1,34 @@
 export const offers = [
-    {
-        service: "Landing Page Design",
-        price: 300,
-    },
-    {
-        service: "Landing Page Website",
-        price: 680,
-    },
-    {
-        service: "Multi-Page Design (2-5)",
-        price: 500,
-    },
-    {
-        service: "Multi-Page Website (2-5)",
-        price: 850,
-    },
-    {
-        service: "Multi-Page Design (5+)",
-        price: 750,
-    },
-    {
-        service: "Multi-Page Website (5+)",
-        price: 1250,
-    },
-    {
-        service: "Ecommerce Design",
-        price: 650,
-    },
-    {
-        service: "Ecommerce Website",
-        price: 1500,
-    },
-]
+  {
+    service: "Brand-led marketing website",
+    price: "Project",
+  },
+  {
+    service: "E-commerce storefront",
+    price: "Project",
+  },
+  {
+    service: "Website or store redevelopment",
+    price: "Project",
+  },
+  {
+    service: "Launch and campaign pages",
+    price: "Project",
+  },
+  {
+    service: "Technical and on-page SEO",
+    price: "Ongoing",
+  },
+  {
+    service: "Analytics and reporting",
+    price: "Ongoing",
+  },
+  {
+    service: "Maintenance and improvement",
+    price: "Ongoing",
+  },
+  {
+    service: "Dashboards and integrations",
+    price: "After assessment",
+  },
+];
