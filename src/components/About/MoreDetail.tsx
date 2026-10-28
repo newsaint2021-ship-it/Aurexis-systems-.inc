@@ -74,7 +74,7 @@ function MoreDetail() {
         <div className="w-full flex-1 object-cover overflow-hidden">
           <Image
             src={AboutImage1}
-            alt="self portrait"
+            alt="editorial portrait with soft natural light"
             className="w-full h-full scale-110"
             placeholder="blur"
             ref={image1}
@@ -98,7 +98,7 @@ function MoreDetail() {
                 animate={text && "animate"}
                 className={`tracking-tighter text-[10vw] md:text-[7vw] leading-[1] uppercase`}
               >
-                Persistence
+                Craft
               </motion.h2>
             </div>
             <div className="overflow-hidden">
@@ -108,7 +108,7 @@ function MoreDetail() {
                 animate={text && "animate"}
                 className={`tracking-tighter text-[10vw] md:text-[7vw] leading-[1] uppercase`}
               >
-                & Motivation
+                & Discipline
               </motion.h2>
             </div>
           </div>
@@ -124,23 +124,18 @@ function MoreDetail() {
         <div className="flex-1 hidden md:block"></div>
         <div className="flex-1">
           <div>
-            <Paragraph
-              text="With over a year of
-            experience, I've developed web and mobile applications from the
-            ground up, satisfying both design and development needs for clients
-            of multiple backgrounds."
-            />
+            <Paragraph text="We start every project by understanding the brand, its customers and what the website needs to achieve commercially. Design decisions follow from that, not from trends." />
           </div>
           <div className="mt-6">
-            <Paragraph text="For a bit more background, I was born in Houston, Texas and grew up in Nigeria before moving to America for a better education. I spent most of my life trying to figure out what my path should be, and it wasn't until college that I discovered that coding was something that worked for me." />
+            <Paragraph text="Our focus is deliberately narrow: fashion, clothing and premium retail first, then established e-commerce businesses. Working in a small number of sectors means we understand their customers, products and buying journeys." />
           </div>
         </div>
         <div className="flex-1 mt-6 md:mt-0">
           <div>
-            <Paragraph text="With my already-prevalent love for design and as a problem-solver, I knew that I had to combine the two, and I landed on web development as a possible career path." />
+            <Paragraph text="Engineering is treated with the same care as design. Sites are built to be fast, accessible and maintainable, with SEO foundations in place from launch rather than added later." />
           </div>
           <div className="mt-6">
-            <Paragraph text="After a lot of self-study and discipline, I not only got pretty good at it but also enjoyed the entire process of it, especially as someone with a love for creation. That love of creation has opened my interests to brand design and even motion design, so I never stop learning new ways to create." />
+            <Paragraph text="We are based in South Africa and work with local and international clients. We keep our claims modest and our scope clear, and we only take on work we are confident we can deliver well." />
           </div>
         </div>
       </motion.div>

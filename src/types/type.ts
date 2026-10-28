@@ -49,6 +49,7 @@ export type List = {
 export type Services = {
   id: number;
   title: string;
+  href?: string;
   technologies: string[];
   description: string;
   image?: StaticImageData;

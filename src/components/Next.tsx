@@ -21,7 +21,7 @@ function Next({ className }: { className: string }) {
     <div className={`${className} object-cover`}>
       <Image
         src={theme === "dark" ? DarkNext : LightNext}
-        alt={`${theme} next arrow`}
+        alt=""
         className="w-full h-full"
       />
     </div>

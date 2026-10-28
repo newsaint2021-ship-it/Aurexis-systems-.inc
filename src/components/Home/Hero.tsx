@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-function Hero() {
+function Hero({ ready = true }: { readonly ready?: boolean }) {
   const star = useRef(null);
 
   useGSAP(() => {
@@ -114,42 +114,46 @@ function Hero() {
 
   return (
     <section className="py-[8vh]">
-      <div className="flex flex-col items-center">
+      <h1 className="sr-only">
+        Aurexis Systems: premium websites and e-commerce for fashion brands
+        and premium retailers
+      </h1>
+      <div className="flex flex-col items-center" aria-hidden="true">
         <div className="overflow-hidden">
           <motion.div
             variants={headerVariant1}
             initial="initial"
-            animate="animate"
+            animate={ready ? "animate" : "initial"}
             className=""
           >
-            <Header1 text="John" />
+            <Header1 text="Aurexis" as="span" />
           </motion.div>
         </div>
         <div className="overflow-hidden">
           <motion.div
             variants={headerVariant2}
             initial="initial"
-            animate="animate"
+            animate={ready ? "animate" : "initial"}
             className=""
           >
-            <Header1 text="Mitchell" />
+            <Header1 text="Systems" as="span" />
           </motion.div>
         </div>
       </div>
       <motion.div
         variants={appear}
         initial="initial"
-        animate="animate"
+        animate={ready ? "animate" : "initial"}
         className="flex justify-center items-center md:justify-end gap-[5em] xs:gap-[8em] mt-5 md:pr-[6em]"
       >
-        <Header6 text="Frontend Developer" />
-        <Header6 text="UI Designer" />
+        <Header6 text="Design Studio" />
+        <Header6 text="Web & E-commerce" />
       </motion.div>
       <div className="mt-6 flex flex-col-reverse md:flex-row gap-[8vw] items-start">
         <motion.div
           variants={flash}
           initial="initial"
-          animate="animate"
+          animate={ready ? "animate" : "initial"}
           className="flex-1 flex justify-end origin-center"
         >
           <div className="w-fit" ref={star}>
@@ -162,7 +166,7 @@ function Hero() {
           <motion.div
             variants={appear2}
             initial="initial"
-            animate="animate"
+            animate={ready ? "animate" : "initial"}
             className="translate-x-[10vw] xs:translate-x-0 md:pl-0 max-w-[40vw] md:flex-[1.5] object-cover"
           >
             <Image
@@ -175,15 +179,16 @@ function Hero() {
           <motion.div
             variants={appear3}
             initial="initial"
-            animate="animate"
+            animate={ready ? "animate" : "initial"}
             className="flex-[3] flex justify-end xs:items-end md:items-baseline xs:py-[4vh] md:py-0"
           >
             <div className="w-[80%] xs:w-full">
               <div className="w-[90%] sm:w-[80%] md:w-[60%]">
-                <Paragraph text="My full stack development and design expertise allows me to build projects from the ground up, transforming ideas into powerful, user-centric solutions that elevate my clients&apos; brands and drive their success." />
+                <Paragraph text="We design and build premium websites and online stores for fashion labels, clothing brands and premium retailers. Considered design, solid engineering and search visibility, delivered as one." />
               </div>
-              <div className="mt-3">
-                <MainButton text="Learn More" link="/about" />
+              <div className="mt-3 flex flex-wrap gap-3">
+                <MainButton text="Start a Project" link="/contact" />
+                <MainButton text="View Work" link="/work" />
               </div>
             </div>
           </motion.div>
