@@ -5,7 +5,7 @@ import LegalPage from "@/components/Content/LegalPage";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Aurexis Systems Inc. handles information submitted through this website.",
+  description: "How Aurexis Digital Studio handles information submitted through this website.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           {
             heading: "Who we are",
             paragraphs: [
-              "This website is operated by Aurexis Systems Inc. This policy explains what information we collect through the website and how we use it.",
+              "This website is operated by Aurexis Digital Studio This policy explains what information we collect through the website and how we use it.",
             ],
           },
           {

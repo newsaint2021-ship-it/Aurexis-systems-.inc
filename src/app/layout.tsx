@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} — Websites & E-commerce for Fashion and Retail Brands`,
-    template: `%s | ${siteConfig.shortName} Systems`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
@@ -59,6 +59,9 @@ export default function RootLayout({
                 name: siteConfig.name,
                 url: siteConfig.url,
                 description: siteConfig.description,
+                logo: `${siteConfig.url}/images/brand/aurexis-logo.png`,
+                telephone: siteConfig.phone,
+                email: siteConfig.contactEmail,
               },
               {
                 "@type": "WebSite",

@@ -7,13 +7,16 @@ const siteUrl =
   (productionHost ? `https://${productionHost}` : "http://localhost:3000");
 
 export const siteConfig = {
-  name: "Aurexis Systems Inc.",
+  name: "Aurexis Digital Studio",
   shortName: "Aurexis",
   url: siteUrl.replace(/\/$/, ""),
   tagline: "Premium digital experiences, engineered for real businesses.",
   description:
-    "Aurexis Systems is a digital design and engineering studio building premium websites and e-commerce experiences for fashion labels, clothing brands and premium retailers.",
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
+    "Aurexis Digital Studio is a digital design and engineering studio building premium websites and e-commerce experiences for fashion labels, clothing brands and premium retailers.",
+  phone: "+27 61 820 2622",
+  phoneHref: "tel:+27618202622",
+  contactEmail: "aurexiscorp@gmail.com",
+  contactEmailHref: "mailto:aurexiscorp@gmail.com",
 };
 
 export const primaryNav = [

@@ -11,6 +11,7 @@ import {
   serviceOptions,
   timelineOptions,
 } from "@/utils/enquiry";
+import { siteConfig } from "@/utils/site";
 
 type Status =
   | { state: "idle" }
@@ -34,6 +35,9 @@ const appear = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { duration: 1, ease: easeInOut, delay: 0.7 } },
 };
+
+const linkUnderline =
+  "relative w-fit after:duration-300 after:ease hover:after:w-full after:absolute after:w-0 after:h-[1.5px] after:top-full after:left-0 after:bg-lightText after:dark:bg-darkText";
 
 const inputClass =
   "py-2 px-2 origin-left border-b-[1.5px] border-b-lightText dark:border-b-darkText outline-none bg-transparent focus-visible:border-b-[2.5px] w-full";
@@ -179,6 +183,29 @@ function MainPage() {
               <Paragraph text="Tell us about your brand and what you need. The more context you share, the more useful our reply will be. We review every enquiry and respond with next steps or questions." />
             </motion.div>
           </div>
+          <motion.address
+            variants={appear}
+            initial="initial"
+            animate="animate"
+            className="not-italic mt-10 flex flex-wrap gap-x-12 gap-y-4"
+          >
+            <div>
+              <p className="text-[14px] text-lightText60 dark:text-darkText60">
+                Telephone
+              </p>
+              <a href={siteConfig.phoneHref} className={`${linkUnderline} block text-[16px]`}>
+                {siteConfig.phone}
+              </a>
+            </div>
+            <div>
+              <p className="text-[14px] text-lightText60 dark:text-darkText60">
+                Email
+              </p>
+              <a href={siteConfig.contactEmailHref} className={`${linkUnderline} block text-[16px]`}>
+                {siteConfig.contactEmail}
+              </a>
+            </div>
+          </motion.address>
           <div className="mt-14">
             <form onSubmit={handleSubmit} aria-describedby="form-status">
               {/* Honeypot: hidden from people and assistive technology. */}

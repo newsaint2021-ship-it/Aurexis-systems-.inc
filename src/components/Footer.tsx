@@ -4,6 +4,7 @@ import Link from "next/link";
 import StarSpin from "./StarSpin";
 import { spectralBridgeRegular } from "@/fonts/font";
 import MainButton from "./MainButton";
+import Logo from "./Logo";
 import { motion, useInView, easeInOut } from "framer-motion";
 import { footerNav, legalNav, siteConfig } from "@/utils/site";
 
@@ -80,11 +81,6 @@ function Footer() {
                 </motion.li>
               );
             })}
-            {siteConfig.contactEmail ? (
-              <li className={`${linkUnderline} text-[14px] md:text-[18px]`}>
-                <a href={`mailto:${siteConfig.contactEmail}`}>Email</a>
-              </li>
-            ) : null}
           </ul>
         </nav>
         <div className="flex-1" ref={lineRef}>
@@ -135,8 +131,9 @@ function Footer() {
           </motion.div>
         </div>
       </div>
-      <div className="flex justify-between flex-wrap mt-8 gap-y-3 gap-x-6">
-        <div className="flex items-center gap-10">
+      <div className="flex justify-between flex-wrap items-end mt-10 gap-y-6 gap-x-6">
+        <div className="flex flex-wrap items-end gap-x-10 gap-y-5">
+          <Logo className="h-16 md:h-20" />
           <div>
             <p className="text-[14px] text-lightText60 dark:text-darkText60">
               Design & Engineering
@@ -153,6 +150,30 @@ function Footer() {
               South Africa & international
             </p>
           </div>
+          <address className="not-italic flex flex-wrap gap-x-10 gap-y-5">
+            <div>
+              <p className="text-[14px] text-lightText60 dark:text-darkText60">
+                Telephone
+              </p>
+              <a
+                href={siteConfig.phoneHref}
+                className={`${linkUnderline} block text-[14px] text-lightText dark:text-darkText`}
+              >
+                {siteConfig.phone}
+              </a>
+            </div>
+            <div>
+              <p className="text-[14px] text-lightText60 dark:text-darkText60">
+                Email
+              </p>
+              <a
+                href={siteConfig.contactEmailHref}
+                className={`${linkUnderline} block text-[14px] text-lightText dark:text-darkText`}
+              >
+                {siteConfig.contactEmail}
+              </a>
+            </div>
+          </address>
         </div>
         <div>
           <p className="text-[14px] text-lightText60 dark:text-darkText60">

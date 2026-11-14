@@ -5,7 +5,7 @@ import LegalPage from "@/components/Content/LegalPage";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
-  description: "Terms governing the use of the Aurexis Systems Inc. website.",
+  description: "Terms governing the use of the Aurexis Digital Studio website.",
   alternates: { canonical: "/terms" },
 };
 
@@ -19,7 +19,7 @@ export default function TermsPage() {
           {
             heading: "Use of this website",
             paragraphs: [
-              "These terms apply to your use of the Aurexis Systems Inc. website. By using the site you agree to them. They do not govern client projects, which are covered by a separate written agreement.",
+              "These terms apply to your use of the Aurexis Digital Studio website. By using the site you agree to them. They do not govern client projects, which are covered by a separate written agreement.",
             ],
           },
           {
@@ -31,7 +31,7 @@ export default function TermsPage() {
           {
             heading: "Intellectual property",
             paragraphs: [
-              "Unless stated otherwise, the design, text and code of this website belong to Aurexis Systems Inc. Project imagery and trademarks shown in our work remain the property of their respective owners.",
+              "Unless stated otherwise, the design, text and code of this website belong to Aurexis Digital Studio Project imagery and trademarks shown in our work remain the property of their respective owners.",
             ],
           },
           {

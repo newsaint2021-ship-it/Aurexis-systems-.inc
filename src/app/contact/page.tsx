@@ -6,7 +6,7 @@ import PageShell from "@/components/PageShell";
 export const metadata: Metadata = {
   title: "Start a Project",
   description:
-    "Tell us about your brand, website or online store. Aurexis Systems will review your enquiry and reply with next steps.",
+    "Tell us about your brand, website or online store. Aurexis Digital Studio will review your enquiry and reply with next steps.",
   alternates: { canonical: "/contact" },
 };
 

@@ -11,7 +11,7 @@ import PageShell from "@/components/PageShell";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Aurexis Systems is a design-led digital studio focused on websites and e-commerce for fashion, clothing and premium retail brands.",
+    "Aurexis Digital Studio is a design-led digital studio focused on websites and e-commerce for fashion, clothing and premium retail brands.",
   alternates: { canonical: "/about" },
 };
 

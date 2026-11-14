@@ -8,7 +8,7 @@ import FooterTransition from "@/components/Home/FooterTransition";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected website, e-commerce and digital product work from Aurexis Systems.",
+    "Selected website, e-commerce and digital product work from Aurexis Digital Studio.",
   alternates: { canonical: "/work" },
 };
 

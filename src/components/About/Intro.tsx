@@ -110,7 +110,7 @@ function Intro() {
             className="sm:w-[65%] lg:w-[50%] mt-8"
           >
             <Paragraph
-              text="Aurexis Systems designs and builds websites and online stores for fashion labels, clothing brands and premium retailers. We care about how a brand looks online and about the engineering that keeps it fast, findable and easy to run."
+              text="Aurexis Digital Studio designs and builds websites and online stores for fashion labels, clothing brands and premium retailers. We care about how a brand looks online and about the engineering that keeps it fast, findable and easy to run."
               className="text-center"
             />
           </motion.div>
