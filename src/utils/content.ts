@@ -78,6 +78,32 @@ export const servicePages: ContentPageData[] = [
         ],
       },
       {
+        label: "Why Custom",
+        heading: "Benefits of custom web development",
+        items: [
+          {
+            title: "Fully custom developed",
+            text: "Engineered specifically to your operational and brand needs. From architecture to bespoke interactions, we build with precision without template limits.",
+          },
+          {
+            title: "Built for future growth & scalability",
+            text: "A robust foundation designed from day one to handle expanding customer bases, high transaction volumes, and evolving feature sets smoothly.",
+          },
+          {
+            title: "Optimised performance",
+            text: "Tailored speed and responsiveness prioritising seamless user journeys and search engine ranking factors.",
+          },
+          {
+            title: "Advanced security",
+            text: "Tailored protection, secure data handling, and modern security practices safeguarding your business and customer information.",
+          },
+          {
+            title: "Seamless API & tool integrations",
+            text: "Connecting existing APIs, payment gateways, inventory feeds, and customer platforms into a unified ecosystem.",
+          },
+        ],
+      },
+      {
         label: "Website or app?",
         heading: "Knowing what you actually need",
         body: "A marketing website presents your business and helps customers take a next step. A custom application handles accounts, data and business logic. Many businesses need the first; some need both. We will tell you which applies to your situation before anything is quoted.",
