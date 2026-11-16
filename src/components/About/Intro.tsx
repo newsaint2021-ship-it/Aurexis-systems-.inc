@@ -7,8 +7,8 @@ import AboutMain from "../../../public/images/general/about/aboutIntro3.jpg";
 import { easeInOut, motion } from "framer-motion";
 
 function Intro() {
-  const line1 = "A design-led studio";
-  const line2 = "with engineering depth";
+  const line1 = "AN INDEPENDENT STUDIO.";
+  const line2 = "A CONSIDERED APPROACH.";
 
   const imageRef = useRef(null);
 
@@ -27,7 +27,7 @@ function Intro() {
       },
     },
   };
-  
+
   const reveal = {
     initial: {
       height: "0%",
@@ -57,7 +57,7 @@ function Intro() {
   };
 
   return (
-    <section className="">
+    <section>
       <div className="flex justify-center mt-[8vh]">
         <div className="w-[85%] sm:w-[70%] lg:w-[65%] flex justify-center items-center flex-col">
           <div className="z-[10] dark:mix-blend-exclusion">
@@ -66,7 +66,7 @@ function Intro() {
                 variants={rise1}
                 initial="initial"
                 animate="animate"
-                className={`${spectralBridgeRegular.className} dark:mix-blend-exclusion text-[12vw] xs:text-[9vw] sm:text-[8vw] lg:text-[6.5vw] text-center leading-[1]`}
+                className={`${spectralBridgeRegular.className} dark:mix-blend-exclusion text-[10vw] xs:text-[8vw] sm:text-[7vw] lg:text-[5.5vw] text-center leading-[1.05]`}
               >
                 {line1}
               </motion.h1>
@@ -76,7 +76,7 @@ function Intro() {
                 variants={rise1}
                 initial="initial"
                 animate="animate"
-                className={`${spectralBridgeRegular.className} dark:mix-blend-exclusion text-[12vw] xs:text-[9vw] sm:text-[8vw] lg:text-[6.5vw] text-center leading-[1]`}
+                className={`${spectralBridgeRegular.className} dark:mix-blend-exclusion text-[10vw] xs:text-[8vw] sm:text-[7vw] lg:text-[5.5vw] text-center leading-[1.05]`}
               >
                 {line2}
               </motion.h1>
@@ -89,17 +89,15 @@ function Intro() {
               animate="animate"
               className="overflow-hidden object-cover object-top z-[0]"
             >
-              <motion.div
-                className=""
-              >
+              <div>
                 <Image
                   src={AboutMain}
-                  alt="a cocktail styled as an editorial still life"
+                  alt="Editorial styling demonstrating tactile brand presentation"
                   className="w-full"
                   placeholder="blur"
                   ref={imageRef}
                 />
-              </motion.div>
+              </div>
             </motion.div>
           </div>
           <motion.div
@@ -107,10 +105,10 @@ function Intro() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="sm:w-[65%] lg:w-[50%] mt-8"
+            className="sm:w-[75%] lg:w-[60%] mt-8"
           >
             <Paragraph
-              text="Aurexis Digital Studio designs and builds websites and online stores for fashion labels, clothing brands and premium retailers. We care about how a brand looks online and about the engineering that keeps it fast, findable and easy to run."
+              text="Aurexis is an independent digital design studio based in Cape Town, South Africa. We work at the intersection of brand, design and technology, creating digital experiences for fashion, clothing and premium retail businesses."
               className="text-center"
             />
           </motion.div>

@@ -15,9 +15,9 @@ function Footer() {
   const lineRef = useRef(null);
   const line = useInView(lineRef, { once: true });
 
-  const line1 = "Have a brand or store";
-  const line2 = "that deserves better?";
-  const line3 = "Let’s talk about it.";
+  const line1 = "Have a project in mind?";
+  const line2 = "Let’s start with";
+  const line3 = "a conversation.";
 
   const rise = {
     initial: {
@@ -48,7 +48,7 @@ function Footer() {
   };
 
   return (
-    <footer className="mb-[20px]">
+    <footer className="mb-[20px] pt-[6vh]">
       <motion.div
         variants={appear}
         initial="initial"
@@ -61,26 +61,24 @@ function Footer() {
       <div className="flex flex-col-reverse md:flex-row md:justify-between gap-y-6">
         <nav aria-label="Footer" className="flex-1">
           <ul className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-2 gap-x-6 gap-y-1 w-fit">
-            {footerNav.map((link, i) => {
-              return (
-                <motion.li
-                  initial={{ opacity: 0 }}
-                  whileInView={{
-                    opacity: 1,
-                    transition: {
-                      duration: 0.5,
-                      delay: i * 0.06,
-                      ease: easeInOut,
-                    },
-                  }}
-                  viewport={{ once: true }}
-                  key={link.href}
-                  className={`${linkUnderline} text-[14px] md:text-[18px]`}
-                >
-                  <Link href={link.href}>{link.title}</Link>
-                </motion.li>
-              );
-            })}
+            {footerNav.map((link, i) => (
+              <motion.li
+                initial={{ opacity: 0 }}
+                whileInView={{
+                  opacity: 1,
+                  transition: {
+                    duration: 0.5,
+                    delay: i * 0.05,
+                    ease: easeInOut,
+                  },
+                }}
+                viewport={{ once: true }}
+                key={link.href}
+                className={`${linkUnderline} text-[14px] md:text-[18px]`}
+              >
+                <Link href={link.href}>{link.title}</Link>
+              </motion.li>
+            ))}
           </ul>
         </nav>
         <div className="flex-1" ref={lineRef}>
@@ -115,12 +113,17 @@ function Footer() {
               {line3}
             </motion.p>
           </div>
+          <p className="mt-4 max-w-[50ch] text-[14px] sm:text-[15.5px] text-lightText70 dark:text-darkText70 leading-relaxed">
+            Whether you’re building a new brand, refining an existing digital
+            presence or bringing your store online, we’d like to understand what
+            you’re working towards.
+          </p>
           <motion.div
             variants={appear}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="mt-2"
+            className="mt-4"
           >
             <MainButton
               text="Start a Project"
@@ -131,28 +134,28 @@ function Footer() {
           </motion.div>
         </div>
       </div>
-      <div className="flex justify-between flex-wrap items-end mt-10 gap-y-6 gap-x-6">
+      <div className="flex justify-between flex-wrap items-end mt-12 gap-y-6 gap-x-6 pt-8 border-t-[1px] border-lightText20 dark:border-darkText20">
         <div className="flex flex-wrap items-end gap-x-10 gap-y-5">
-          <Logo className="h-16 md:h-20" />
+          <Logo className="h-14 md:h-16" />
           <div>
-            <p className="text-[14px] text-lightText60 dark:text-darkText60">
-              Design & Engineering
+            <p className="text-[13px] text-lightText60 dark:text-darkText60">
+              Studio
             </p>
-            <p className="text-[14px] text-lightText dark:text-darkText">
+            <p className="text-[14px] text-lightText dark:text-darkText font-medium">
               {siteConfig.name}
             </p>
           </div>
           <div>
-            <p className="text-[14px] text-lightText60 dark:text-darkText60">
-              Working with
+            <p className="text-[13px] text-lightText60 dark:text-darkText60">
+              Location
             </p>
             <p className="text-[14px] text-lightText dark:text-darkText">
-              South Africa & international
+              Cape Town &middot; South Africa & international
             </p>
           </div>
           <address className="not-italic flex flex-wrap gap-x-10 gap-y-5">
             <div>
-              <p className="text-[14px] text-lightText60 dark:text-darkText60">
+              <p className="text-[13px] text-lightText60 dark:text-darkText60">
                 Telephone
               </p>
               <a
@@ -163,7 +166,7 @@ function Footer() {
               </a>
             </div>
             <div>
-              <p className="text-[14px] text-lightText60 dark:text-darkText60">
+              <p className="text-[13px] text-lightText60 dark:text-darkText60">
                 Email
               </p>
               <a
@@ -176,24 +179,24 @@ function Footer() {
           </address>
         </div>
         <div>
-          <p className="text-[14px] text-lightText60 dark:text-darkText60">
+          <p className="text-[13px] text-lightText60 dark:text-darkText60">
             <span
               aria-hidden="true"
-              className="text-[14px] animate-ping text-green-500 mr-1"
+              className="text-[14px] text-green-500 mr-1"
             >
-              &#x2022;
+              &#x25cf;
             </span>
-            Accepting enquiries
+            Accepting select projects
           </p>
           <p className="text-[14px] text-lightText dark:text-darkText">
-            Websites & e-commerce
+            Fashion websites & e-commerce
           </p>
         </div>
       </div>
-      <div className="mt-3 flex flex-col xs:flex-row items-center justify-between gap-2">
-        <p className="text-[12px]">
+      <div className="mt-6 flex flex-col xs:flex-row items-center justify-between gap-2 pt-4 border-t-[1px] border-lightText10 dark:border-darkText10">
+        <p className="text-[12px] text-lightText60 dark:text-darkText60">
           &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
-          reserved.
+          reserved. Where brand meets commerce.
         </p>
         <ul className="flex gap-4">
           {legalNav.map((link) => (

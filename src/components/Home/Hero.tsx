@@ -26,13 +26,13 @@ const appear = (delay: number) => ({
 });
 
 const INTRO_COPY =
-  "We design and build premium websites and online stores for fashion labels, clothing brands and premium retailers. Considered design, solid engineering and search visibility, delivered as one.";
+  "Aurexis designs and builds considered websites and e-commerce experiences for fashion, clothing and premium retail brands. Where brand expression meets digital commerce.";
 
 function HeroActions() {
   return (
-    <div className="mt-3 flex flex-wrap gap-3">
+    <div className="mt-4 flex flex-wrap gap-3">
+      <MainButton text="Explore Selected Work" link="/work" />
       <MainButton text="Start a Project" link="/contact" />
-      <MainButton text="View Work" link="/work" />
     </div>
   );
 }
@@ -58,9 +58,19 @@ function Hero({ ready = true }: { readonly ready?: boolean }) {
   return (
     <section className="pt-[3vh] pb-[8vh]">
       <h1 className="sr-only">
-        Aurexis Digital Studio: premium websites and e-commerce for fashion
-        brands and premium retailers
+        Aurexis Digital Studio — Fashion Website Design & E-commerce Studio | Cape Town
       </h1>
+
+      {/* EYEBROW & POSITIONING BANNER */}
+      <motion.div
+        variants={appear(0.05)}
+        initial="initial"
+        animate={state}
+        className="mb-4 flex flex-wrap items-center justify-between text-[11px] sm:text-[12.5px] uppercase tracking-[0.16em] text-lightText60 dark:text-darkText60 border-b-[1px] border-lightText20 dark:border-darkText20 pb-3"
+      >
+        <span>Independent Digital Design Studio &middot; Cape Town</span>
+        <span className="hidden sm:inline">Fashion, Clothing & Premium Retail</span>
+      </motion.div>
 
       {/* FILM + HEADLINE, WITH DESCRIPTORS AND COPY ALONGSIDE ON DESKTOP */}
       <div className="flex flex-col md:flex-row md:items-stretch gap-6 md:gap-[4vw]">
@@ -106,14 +116,19 @@ function Hero({ ready = true }: { readonly ready?: boolean }) {
           variants={appear(0.6)}
           initial="initial"
           animate={state}
-          className="flex flex-1 flex-row justify-between md:flex-col md:justify-between md:py-[2vh]"
+          className="flex flex-1 flex-row justify-between md:flex-col md:justify-between md:py-[1vh]"
         >
           <div className="flex flex-row justify-between w-full md:w-auto md:flex-col md:gap-y-1">
-            <Header6 text="Design Studio" />
+            <Header6 text="Fashion & Retail" />
             <Header6 text="Web & E-commerce" />
           </div>
           <div className="hidden md:block">
-            <div className="lg:w-[85%]">
+            <h2
+              className={`${spectralBridgeRegular.className} text-[32px] lg:text-[40px] xl:text-[46px] leading-[1.05] tracking-tight mb-4`}
+            >
+              Digital experiences for brands with a point of view.
+            </h2>
+            <div className="lg:w-[95%]">
               <Paragraph text={INTRO_COPY} />
             </div>
             <HeroActions />
@@ -121,8 +136,8 @@ function Hero({ ready = true }: { readonly ready?: boolean }) {
         </motion.div>
       </div>
 
-      {/* SUPPORTING PHOTOGRAPHY, COPY AND CTAS */}
-      <div className="mt-10 md:mt-[6vh] flex flex-col-reverse md:flex-row gap-[8vw] items-start">
+      {/* SUPPORTING PHOTOGRAPHY, COPY AND CTAS (MOBILE VIEW) */}
+      <div className="mt-8 md:mt-[6vh] flex flex-col-reverse md:flex-row gap-[8vw] items-start">
         <motion.div
           variants={appear(0.9)}
           initial="initial"
@@ -142,8 +157,8 @@ function Hero({ ready = true }: { readonly ready?: boolean }) {
           >
             <Image
               src={HeroImage}
-              alt="chairs and tables in a cozy room with plants"
-              className="w-full h-full"
+              alt="Art direction and physical space reflecting considered design aesthetics"
+              className="w-full h-full object-cover"
               placeholder="blur"
               sizes="(min-width: 992px) 26vw, 40vw"
             />
@@ -152,12 +167,15 @@ function Hero({ ready = true }: { readonly ready?: boolean }) {
             variants={appear(0.8)}
             initial="initial"
             animate={state}
-            className="flex-[3] flex justify-end xs:items-end xs:py-[4vh] md:hidden"
+            className="flex-[3] flex justify-end xs:items-end xs:py-[2vh] md:hidden"
           >
-            <div className="w-[80%] xs:w-full">
-              <div className="w-[90%] sm:w-[80%]">
-                <Paragraph text={INTRO_COPY} />
-              </div>
+            <div className="w-[85%] xs:w-full">
+              <h2
+                className={`${spectralBridgeRegular.className} text-[26px] xs:text-[30px] leading-[1.08] mb-3`}
+              >
+                Digital experiences for brands with a point of view.
+              </h2>
+              <Paragraph text={INTRO_COPY} />
               <HeroActions />
             </div>
           </motion.div>

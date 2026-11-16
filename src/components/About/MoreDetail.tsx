@@ -74,8 +74,8 @@ function MoreDetail() {
         <div className="w-full flex-1 object-cover overflow-hidden">
           <Image
             src={AboutImage1}
-            alt="editorial portrait with soft natural light"
-            className="w-full h-full scale-110"
+            alt="Editorial portrait with soft natural lighting and refined styling"
+            className="w-full h-full scale-110 object-cover"
             placeholder="blur"
             ref={image1}
           />
@@ -84,8 +84,8 @@ function MoreDetail() {
           <div className="w-full object-cover overflow-hidden">
             <Image
               src={AboutImage2}
-              alt="beautiful pink flower"
-              className="w-full h-full scale-110"
+              alt="Floral botanical study reflecting natural color palette"
+              className="w-full h-full scale-110 object-cover"
               placeholder="blur"
               ref={image2}
             />
@@ -96,7 +96,7 @@ function MoreDetail() {
                 variants={rise}
                 initial="initial"
                 animate={text && "animate"}
-                className={`tracking-tighter text-[10vw] md:text-[7vw] leading-[1] uppercase`}
+                className="tracking-tighter text-[10vw] md:text-[7vw] leading-[1] uppercase"
               >
                 Craft
               </motion.h2>
@@ -106,7 +106,7 @@ function MoreDetail() {
                 variants={rise}
                 initial="initial"
                 animate={text && "animate"}
-                className={`tracking-tighter text-[10vw] md:text-[7vw] leading-[1] uppercase`}
+                className="tracking-tighter text-[10vw] md:text-[7vw] leading-[1] uppercase"
               >
                 & Discipline
               </motion.h2>
@@ -124,18 +124,18 @@ function MoreDetail() {
         <div className="flex-1 hidden md:block"></div>
         <div className="flex-1">
           <div>
-            <Paragraph text="We start every project by understanding the brand, its customers and what the website needs to achieve commercially. Design decisions follow from that, not from trends." />
+            <Paragraph text="We start every project by understanding what a brand needs to communicate and what its customers need to experience. We consider the details, question the obvious and build around the requirements of the business." />
           </div>
           <div className="mt-6">
-            <Paragraph text="Our focus is deliberately narrow: fashion, clothing and premium retail first, then established e-commerce businesses. Working in a small number of sectors means we understand their customers, products and buying journeys." />
+            <Paragraph text="Our focus is deliberately narrow: fashion labels, clothing brands and premium retail businesses. We do not manufacture garments or operate as a general IT helpdesk. We design and engineer websites and e-commerce platforms that honour the brand and support commercial growth." />
           </div>
         </div>
         <div className="flex-1 mt-6 md:mt-0">
           <div>
-            <Paragraph text="Engineering is treated with the same care as design. Sites are built to be fast, accessible and maintainable, with SEO foundations in place from launch rather than added later." />
+            <Paragraph text="Founded by P. Midas and based in Cape Town, South Africa, we collaborate with independent labels and premium retailers locally and internationally. Creative direction and technical execution are united under one roof." />
           </div>
           <div className="mt-6">
-            <Paragraph text="We are based in South Africa and work with local and international clients. We keep our claims modest and our scope clear, and we only take on work we are confident we can deliver well." />
+            <Paragraph text="Every site is built with modern performance standards, accessibility, mobile fluid layouts and organic search foundations from day one. Where brand meets commerce." />
           </div>
         </div>
       </motion.div>

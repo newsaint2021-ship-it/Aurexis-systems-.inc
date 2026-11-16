@@ -2,7 +2,7 @@ export const processes = [
   {
     title: "Discovery",
     description:
-      "We start by understanding your brand, customers, products and goals, along with any existing site or store. We then agree what the project needs to achieve and confirm scope, timeline and budget in writing.",
+      "We start by understanding your brand identity, garments or products, audience and commercial goals. We review existing assets, lookbooks and platforms, agreeing on a clear scope and timeline in writing.",
   },
   {
     title: null,
@@ -15,17 +15,17 @@ export const processes = [
   {
     title: "Strategy",
     description:
-      "We review your market, competitors and current performance, then plan the site structure, key customer journeys and the content each page needs. Technical requirements such as platform, integrations and SEO are settled here.",
+      "We plan the digital storefront architecture, collection hierarchy, sizing and product detail flows. Technical foundations—platform, checkout integrations, responsive breakpoints and technical SEO—are settled here.",
   },
   {
     title: "Design",
     description:
-      "We design the key pages first, usually the homepage and a product or service page, and refine them with you. Once the direction is approved, the remaining pages follow the same system.",
+      "We design key touchpoints first—the homepage, collection lookbook, product detail and mobile navigation. We refine typography, spacing and interactions until the digital experience feels as considered as the physical brand.",
   },
   {
     title: "Build & Launch",
     description:
-      "We develop the site, test it across devices for responsiveness, accessibility and performance, and share progress regularly. After launch we walk you through everything and can continue with SEO, reporting or maintenance.",
+      "We develop the storefront with clean code, testing rigorously across mobile devices, tablets and desktops. We verify Core Web Vitals, accessibility, checkout flows and structured data before launch, with ongoing search and performance support thereafter.",
   },
   {
     title: null,

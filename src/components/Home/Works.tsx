@@ -12,11 +12,9 @@ function Works() {
   return (
     <section className="py-[10vh]" id="works">
       <div>
-        <div className="sticky top-[8vh]">
+        <div className="sticky top-[8vh] z-10">
           <div className="overflow-hidden">
             <motion.div
-              // variants={headerVariant1}
-              className=""
               ref={headerRef}
               initial={{ y: "80%" }}
               animate={
@@ -47,11 +45,14 @@ function Works() {
                 }
               }
             >
-              <Header2 text="Projects" />
+              <Header2 text="Digital Work" />
             </motion.div>
           </div>
+          <p className="text-center text-[12px] sm:text-[14px] uppercase tracking-[0.16em] text-lightText60 dark:text-darkText60 mt-2">
+            Independent engagements &middot; concepts &middot; digital commerce
+          </p>
         </div>
-        <div className="mt-[-4vh]">
+        <div className="mt-[2vh]">
           {allProjects?.map((work) => {
             return (
               <div key={work.title}>

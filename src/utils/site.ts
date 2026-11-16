@@ -1,18 +1,24 @@
 const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
 
-// The canonical domain is not defined anywhere in the repository yet.
-// Set NEXT_PUBLIC_SITE_URL once the production domain is confirmed.
+// Production domain is https://aurexis-systems-inc.vercel.app
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (productionHost ? `https://${productionHost}` : "http://localhost:3000");
+  (productionHost ? `https://${productionHost}` : "https://aurexis-systems-inc.vercel.app");
 
 export const siteConfig = {
   name: "Aurexis Digital Studio",
   shortName: "Aurexis",
   url: siteUrl.replace(/\/$/, ""),
-  tagline: "Premium digital experiences, engineered for real businesses.",
+  tagline: "Where brand meets commerce.",
+  positioning:
+    "Aurexis designs and builds considered websites and e-commerce experiences for fashion, clothing and premium retail brands.",
   description:
-    "Aurexis Digital Studio is a digital design and engineering studio building premium websites and e-commerce experiences for fashion labels, clothing brands and premium retailers.",
+    "Aurexis is an independent Cape Town digital design studio creating considered websites and e-commerce experiences for fashion, clothing and premium retail brands.",
+  founder: "P. Midas",
+  city: "Cape Town",
+  region: "Western Cape",
+  country: "South Africa",
+  countryCode: "ZA",
   phone: "+27 61 820 2622",
   phoneHref: "tel:+27618202622",
   contactEmail: "aurexiscorp@gmail.com",
@@ -29,9 +35,9 @@ export const primaryNav = [
 
 export const footerNav = [
   { title: "Services", href: "/services" },
-  { title: "Fashion", href: "/industries/fashion" },
-  { title: "Luxury retail", href: "/industries/luxury-retail" },
-  { title: "E-commerce", href: "/industries/ecommerce" },
+  { title: "Fashion websites", href: "/services/fashion-websites" },
+  { title: "E-commerce", href: "/services/ecommerce" },
+  { title: "Premium retail", href: "/services/premium-retail" },
   { title: "Work", href: "/work" },
   { title: "Insights", href: "/insights" },
   { title: "About", href: "/about" },

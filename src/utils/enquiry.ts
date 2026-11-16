@@ -1,10 +1,11 @@
 export const serviceOptions = [
-  "Website development",
-  "E-commerce store",
+  "Fashion & Brand Website",
+  "E-commerce Design & Development",
+  "Premium Retail Website",
   "Website or store redevelopment",
-  "SEO and optimisation",
-  "Custom dashboard",
-  "Integrations and automation",
+  "SEO & Search Performance",
+  "Custom Dashboards / BI",
+  "Connected Systems & Integrations",
   "Not sure yet",
 ];
 

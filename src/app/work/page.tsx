@@ -4,21 +4,35 @@ import PageShell from "@/components/PageShell";
 import PageHero from "@/components/Content/PageHero";
 import Works from "@/components/Home/Works";
 import FooterTransition from "@/components/Home/FooterTransition";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Selected Digital Work",
   description:
-    "Selected website, e-commerce and digital product work from Aurexis Digital Studio.",
+    "Selected websites, e-commerce storefronts and digital experiments designed and engineered by Aurexis Digital Studio. Grounded in brand expression and technical craft.",
   alternates: { canonical: "/work" },
+  openGraph: {
+    title: "Selected Digital Work | Aurexis",
+    description:
+      "Selected websites, e-commerce storefronts and digital experiments designed and engineered by Aurexis Digital Studio. Grounded in brand expression and technical craft.",
+    url: "/work",
+  },
 };
 
 export default function WorkPage() {
   return (
     <PageShell>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Work", path: "/work" },
+        ]}
+      />
       <PageHero
-        eyebrow="Work"
-        headline={["Selected", "projects"]}
-        intro="A selection of websites, online stores and digital products. Each entry outlines the project type, our contribution and links to the live work where available."
+        eyebrow="Portfolio"
+        headline={["Selected", "digital work"]}
+        intro="A selection of e-commerce storefronts, brand websites and digital design explorations. Each project represents our commitment to considered aesthetics, intuitive interaction and engineering craft."
+        secondaryCta={{ text: "Start a Project", link: "/contact" }}
       />
       <Works />
       <FooterTransition />

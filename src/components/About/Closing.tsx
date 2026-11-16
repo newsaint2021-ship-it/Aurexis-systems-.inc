@@ -5,11 +5,11 @@ import MainButton from "../MainButton";
 import { easeInOut, motion } from "framer-motion";
 
 function Closing() {
-  const line1 = "If your brand deserves a better";
-  const line2 = "website or online store, tell us";
-  const line3 = "what you are building. We will";
-  const line4 = "review it properly and reply with";
-  const line5 = "honest next steps.";
+  const line1 = "Have a brand or store";
+  const line2 = "that deserves better?";
+  const line3 = "Whether you’re building a new";
+  const line4 = "brand or bringing your store";
+  const line5 = "online, let’s start with a conversation.";
 
   const appear = {
     initial: {

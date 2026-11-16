@@ -10,23 +10,40 @@ import { siteConfig } from "@/utils/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Websites & E-commerce for Fashion and Retail Brands`,
+    default: "Fashion Website Design & E-commerce Studio | Aurexis",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.founder }, { name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
-    title: siteConfig.name,
+    title: "Fashion Website Design & E-commerce Studio | Aurexis",
     description: siteConfig.description,
-    url: "/",
+    url: siteConfig.url,
     locale: "en_ZA",
+    images: [
+      {
+        url: "/brand/aurexis-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Aurexis Digital Studio — Where Brand Meets Commerce",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: "Fashion Website Design & E-commerce Studio | Aurexis",
     description: siteConfig.description,
+    images: ["/brand/aurexis-logo.png"],
   },
 };
 
@@ -45,8 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en-ZA" suppressHydrationWarning>
       <body
-        className={`${satoshiRegular.className} scrollbar scrollLight dark:scrollDark duration-300 bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText
-              `}
+        className={`${satoshiRegular.className} scrollbar scrollLight dark:scrollDark duration-300 bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText`}
         suppressHydrationWarning
       >
         <JsonLd
@@ -54,14 +70,33 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@graph": [
               {
-                "@type": "Organization",
+                "@type": ["Organization", "ProfessionalService"],
                 "@id": `${siteConfig.url}/#organization`,
                 name: siteConfig.name,
                 url: siteConfig.url,
                 description: siteConfig.description,
-                logo: `${siteConfig.url}/images/brand/aurexis-logo.png`,
+                logo: `${siteConfig.url}/brand/aurexis-logo.png`,
                 telephone: siteConfig.phone,
                 email: siteConfig.contactEmail,
+                founder: {
+                  "@type": "Person",
+                  name: siteConfig.founder,
+                },
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: siteConfig.city,
+                  addressRegion: siteConfig.region,
+                  addressCountry: siteConfig.countryCode,
+                },
+                priceRange: "$$$",
+                knowsAbout: [
+                  "Fashion Website Design",
+                  "E-commerce Web Development",
+                  "Premium Retail Websites",
+                  "Technical SEO",
+                  "Core Web Vitals",
+                  "Brand Expression & Art Direction",
+                ],
               },
               {
                 "@type": "WebSite",
@@ -75,9 +110,7 @@ export default function RootLayout({
           }}
         />
         <LenisScroll>
-          {/* GSAP SCROLLTRIGGER */}
           <Scroll>
-            {/* ENABLES DARK AND LIGHT MODE */}
             <Provider>
               <div>{children}</div>
             </Provider>

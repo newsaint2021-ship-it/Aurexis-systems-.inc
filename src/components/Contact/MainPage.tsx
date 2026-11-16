@@ -180,7 +180,7 @@ function MainPage() {
               animate="animate"
               className="w-[80%] sm:w-[60%] md:w-[55%]"
             >
-              <Paragraph text="Tell us about your brand and what you need. The more context you share, the more useful our reply will be. We review every enquiry and respond with next steps or questions." />
+              <Paragraph text="Whether you’re building a new brand, refining an existing digital presence or bringing your store online, we’d like to understand what you’re working towards. Let’s start with a conversation." />
             </motion.div>
           </div>
           <motion.address

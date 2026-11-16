@@ -7,17 +7,32 @@ import Resume from "@/components/About/Resume";
 import Mockups from "@/components/About/Mockups";
 import Closing from "@/components/About/Closing";
 import PageShell from "@/components/PageShell";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: {
+    absolute: "About Aurexis Digital Studio | Cape Town",
+  },
   description:
-    "Aurexis Digital Studio is a design-led digital studio focused on websites and e-commerce for fashion, clothing and premium retail brands.",
+    "Aurexis is an independent digital design studio based in Cape Town, South Africa, creating considered websites and e-commerce experiences for fashion and retail brands.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Aurexis Digital Studio | Cape Town",
+    description:
+      "Aurexis is an independent digital design studio based in Cape Town, South Africa, creating considered websites and e-commerce experiences for fashion and retail brands.",
+    url: "/about",
+  },
 };
 
 function About() {
   return (
     <PageShell>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ]}
+      />
       <Intro />
       <AboutMe />
       <MoreDetail />

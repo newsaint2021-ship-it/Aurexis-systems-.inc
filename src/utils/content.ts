@@ -8,9 +8,11 @@ export type ContentSection = {
 export type ContentPageData = {
   slug: string;
   kind: "service" | "industry";
+  hierarchy?: "primary" | "supporting";
   title: string;
   metaTitle: string;
   metaDescription: string;
+  canonicalPath?: string;
   headline: [string, string];
   intro: string;
   audience: string;
@@ -20,280 +22,381 @@ export type ContentPageData = {
 };
 
 export const servicePages: ContentPageData[] = [
+  // 01. PRIMARY SERVICE: Fashion & Brand Websites
   {
-    slug: "web-development",
+    slug: "fashion-websites",
     kind: "service",
-    title: "Website Development",
-    metaTitle: "Website Design & Development",
+    hierarchy: "primary",
+    title: "Fashion & Brand Websites",
+    metaTitle: "Fashion & Clothing Brand Website Design",
     metaDescription:
-      "Brand-led marketing websites and website redevelopment for fashion, retail and consumer businesses. Responsive design, performance, accessibility and SEO foundations built in.",
-    headline: ["Websites built", "around your brand"],
+      "Considered website design and custom development for independent fashion labels, streetwear and clothing brands. Built around your brand, responsive and search-ready.",
+    canonicalPath: "/services/fashion-websites",
+    headline: ["Websites built", "around the brand"],
     intro:
-      "A website is often the first serious impression a customer has of your business. We design and build brand-led websites that look considered, load quickly and are easy to manage after launch.",
+      "A fashion website should carry the same intention, art direction and discipline as the garments themselves. We design and build custom websites for independent fashion labels, clothing brands and businesses with a defined visual identity.",
     audience:
-      "Brands launching online for the first time, businesses outgrowing a template, and companies whose current site no longer reflects the quality of what they sell.",
+      "Independent fashion labels, streetwear brands, apparel studios and clothing businesses establishing or elevating their digital presence.",
     sections: [
       {
-        label: "What we build",
-        heading: "Marketing and brand websites",
+        label: "Approach",
+        heading: "Tailored to your aesthetic, not a template",
+        body:
+          "Off-the-shelf templates force distinct brands into identical boxes. We start with your brand identity, lookbooks and typography, creating an interface that feels authentic to your label while keeping interactions effortless.",
         items: [
           {
-            title: "Brand-led marketing websites",
-            text: "Single or multi-page sites that present your brand, collections or services with clarity and character.",
+            title: "Brand-led art direction",
+            text: "Layouts, typography and visual pacing tailored to your seasonal collections and brand expression.",
           },
           {
-            title: "Multi-page business websites",
-            text: "Structured sites with clear navigation for businesses with several services, ranges or audiences.",
+            title: "Lookbooks and campaign features",
+            text: "Dedicated storytelling space for editorial shoots, runway drops and seasonal lookbooks.",
           },
           {
-            title: "Launch and campaign pages",
-            text: "Focused landing pages for a collection drop, product launch or seasonal campaign.",
+            title: "Mobile-first execution",
+            text: "More than 70% of fashion discovery happens on mobile. Every transition, image crop and typography scale is refined for handheld screens.",
           },
           {
-            title: "Website redevelopment",
-            text: "Rebuilding an existing site on a faster, more maintainable foundation while protecting what already works, including search visibility.",
+            title: "Content management freedom",
+            text: "A clean CMS setup that allows your team to update campaigns, press features and new collections independently without developer intervention.",
           },
         ],
       },
       {
-        label: "Included",
-        heading: "Foundations, not extras",
+        label: "Engineering",
+        heading: "Why custom development matters",
         items: [
           {
-            title: "Responsive UI and UX",
-            text: "Designed for mobile first, then refined for tablet and desktop.",
+            title: "Custom development & brand identity",
+            text: "Unique visual architecture that differentiates your label in a crowded market, free from cookie-cutter theme constraints.",
           },
           {
-            title: "Content management",
-            text: "Where you need to update content yourself, we recommend a CMS that suits your team and budget rather than a one-size-fits-all choice.",
+            title: "Built for commercial growth",
+            text: "Scalable architecture designed to accommodate expanding lookbooks, international customer traffic and growing catalogue depth.",
           },
           {
-            title: "Performance, accessibility and SEO",
-            text: "Semantic markup, optimised images, sensible metadata and accessible interactions from the start.",
+            title: "Performance & rapid page loads",
+            text: "Lightweight code, modern asset compression and instant page transitions that hold visitor attention and reduce drop-off.",
           },
           {
-            title: "Testing, launch and handover",
-            text: "Cross-device testing before launch, followed by a walkthrough so your team knows how everything works.",
+            title: "Technical security & reliability",
+            text: "Modern web standards, automated deployments and secure infrastructure that keep your digital presence resilient and dependable.",
           },
         ],
       },
       {
-        label: "Why Custom",
-        heading: "Benefits of custom web development",
+        label: "Foundations",
+        heading: "Every site includes",
         items: [
           {
-            title: "Fully custom developed",
-            text: "Engineered specifically to your operational and brand needs. From architecture to bespoke interactions, we build with precision without template limits.",
+            title: "Technical SEO and semantic metadata",
+            text: "Structured metadata, Open Graph tags and clean heading hierarchy to establish search visibility across search engines.",
           },
           {
-            title: "Built for future growth & scalability",
-            text: "A robust foundation designed from day one to handle expanding customer bases, high transaction volumes, and evolving feature sets smoothly.",
+            title: "Responsive performance",
+            text: "Carefully compressed imagery, responsive picture sizing and minimal client-side overhead for fast loading on cellular connections.",
           },
           {
-            title: "Optimised performance",
-            text: "Tailored speed and responsiveness prioritising seamless user journeys and search engine ranking factors.",
-          },
-          {
-            title: "Advanced security",
-            text: "Tailored protection, secure data handling, and modern security practices safeguarding your business and customer information.",
-          },
-          {
-            title: "Seamless API & tool integrations",
-            text: "Connecting existing APIs, payment gateways, inventory feeds, and customer platforms into a unified ecosystem.",
+            title: "Accessibility standards",
+            text: "Readable contrast, semantic HTML landmarks, keyboard navigation and screen-reader compatibility built into every component.",
           },
         ],
-      },
-      {
-        label: "Website or app?",
-        heading: "Knowing what you actually need",
-        body: "A marketing website presents your business and helps customers take a next step. A custom application handles accounts, data and business logic. Many businesses need the first; some need both. We will tell you which applies to your situation before anything is quoted.",
       },
     ],
-    note: "Ongoing maintenance and improvement can be arranged after launch. Scope and timelines are agreed per project.",
     related: [
-      { title: "E-commerce development", href: "/services/ecommerce" },
-      { title: "SEO and optimisation", href: "/services/seo" },
-      { title: "Fashion brands", href: "/industries/fashion" },
+      { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "Premium Retail Websites", href: "/services/premium-retail" },
+      { title: "Search & Performance", href: "/services/seo" },
     ],
   },
+
+  // 02. PRIMARY SERVICE: E-commerce Design & Development
   {
     slug: "ecommerce",
     kind: "service",
-    title: "E-commerce Development",
-    metaTitle: "E-commerce Website Design & Development",
+    hierarchy: "primary",
+    title: "E-commerce Design & Development",
+    metaTitle: "Fashion E-commerce Design & Development",
     metaDescription:
-      "Online stores for fashion labels and premium retailers: storefront design, product and collection pages, variants, mobile shopping, checkout considerations, product SEO and analytics.",
-    headline: ["Online stores", "designed to sell"],
+      "Digital storefronts engineered for fashion and retail brands. Thoughtful collection layouts, product discovery, mobile shopping and frictionless checkout.",
+    canonicalPath: "/services/ecommerce",
+    headline: ["Where brand expression", "meets digital commerce"],
     intro:
-      "Good e-commerce is more than a product grid. We design and build storefronts that present products properly, make variants and sizing easy to understand, and keep the path to checkout short.",
+      "An online store shouldn't force you to choose between brand storytelling and commercial efficiency. We build digital storefronts that celebrate your garments while making browsing, sizing and purchasing completely intuitive.",
     audience:
-      "Clothing labels and premium retailers launching a store, and established online stores that need a better customer experience or a more reliable foundation.",
+      "Fashion labels, clothing brands and direct-to-consumer businesses launching a new storefront or outgrowing a restrictive pre-made theme.",
     sections: [
       {
-        label: "Storefront",
-        heading: "Presentation and discovery",
+        label: "Storefront UX",
+        heading: "Designed for how people shop fashion",
         items: [
           {
-            title: "Storefront design",
-            text: "A store that feels like your brand rather than a theme with a logo on it.",
+            title: "Collection navigation & filtering",
+            text: "Logical categories, collection filters and fluid transitions that allow customers to explore by season, category or drop.",
           },
           {
-            title: "Product and collection pages",
-            text: "Imagery, descriptions, sizing and details laid out so customers can decide with confidence.",
+            title: "Product detail pages that convert",
+            text: "High-resolution garment imagery, clear fabric and fit information, accurate size guides and instant inventory indicators.",
           },
           {
-            title: "Variants and navigation",
-            text: "Colours, sizes and ranges organised so customers find the right item without friction.",
+            title: "Mobile checkout simplicity",
+            text: "Frictionless cart drawers, accelerated payment options (Apple Pay, Google Pay, local gateways) and clear delivery transparency.",
           },
           {
-            title: "Mobile shopping",
-            text: "Most browsing happens on a phone. Layouts, filters and the cart are designed for it first.",
+            title: "Inventory and drop management",
+            text: "Support for limited-edition drops, pre-orders, back-in-stock alerts and multi-location inventory synchronization.",
           },
         ],
       },
       {
-        label: "Operations",
-        heading: "Checkout, payments and shipping",
-        body: "Cart and checkout flows are planned around how your customers buy. Payment gateways and shipping providers are selected and confirmed during scoping, based on your platform, region and volumes. We only commit to an integration once we have confirmed it is feasible for your setup.",
-      },
-      {
-        label: "Growth",
-        heading: "Product SEO and measurement",
+        label: "Platforms & Stack",
+        heading: "Flexible commerce architectures",
+        body:
+          "We engineer commerce experiences tailored to your operating model — whether building a custom storefront on Shopify, integrating headless commerce with modern web frameworks, or refining an existing setup.",
         items: [
           {
-            title: "Product SEO",
-            text: "Structured product and category pages, clean URLs and accurate metadata.",
+            title: "Shopify & Custom Storefronts",
+            text: "Custom theme development and headless frontends tailored to your exact visual system without third-party app bloat.",
           },
           {
-            title: "Analytics and conversion tracking",
-            text: "Measurement of the events that matter, such as product views, add-to-cart and completed orders.",
+            title: "Local & international payments",
+            text: "Integration with South African payment gateways (PayFast, Ozow, Yoco, Peach) and international processors (Stripe, PayPal).",
           },
           {
-            title: "Redevelopment and migration",
-            text: "Moving an existing store to a new build or platform, with redirects planned to protect existing search traffic. Feasibility depends on your current platform and data.",
+            title: "Shipping & logistics connectivity",
+            text: "Direct integration with courier partners, automated rate calculations and clear order tracking.",
           },
         ],
       },
     ],
     related: [
-      { title: "SEO and optimisation", href: "/services/seo" },
-      { title: "Dashboards and analytics", href: "/services/dashboards-analytics" },
-      { title: "E-commerce businesses", href: "/industries/ecommerce" },
+      { title: "Fashion & Brand Websites", href: "/services/fashion-websites" },
+      { title: "Search & Performance", href: "/services/seo" },
+      { title: "Connected Systems", href: "/services/integrations-automation" },
     ],
   },
+
+  // 03. PRIMARY SERVICE: Premium Retail Websites
+  {
+    slug: "premium-retail",
+    kind: "service",
+    hierarchy: "primary",
+    title: "Premium Retail Websites",
+    metaTitle: "Premium Retail Website Design & Development",
+    metaDescription:
+      "Distinctive digital experiences for luxury and premium retail businesses. Clean product catalogues, enquiry flows and brand storytelling.",
+    canonicalPath: "/services/premium-retail",
+    headline: ["Considered digital experiences", "for premium retail"],
+    intro:
+      "Premium products require a digital experience that reflects the in-store standard. That means visual restraint, high-consideration product presentation and an enquiry or purchasing journey that establishes immediate trust.",
+    audience:
+      "Businesses offering jewellery, leather goods, footwear, luxury accessories, curated home pieces and bespoke goods.",
+    sections: [
+      {
+        label: "Visual Standard",
+        heading: "Quality you can see",
+        body:
+          "Typography, spacing and image treatment are handled with the same care as packaging and retail architecture. Details such as materials, craftsmanship and provenance are given room to breathe.",
+        items: [
+          {
+            title: "Digital catalogues & curation",
+            text: "Curated product presentations arranged for browsing, material appreciation and effortless comparison.",
+          },
+          {
+            title: "Enquiry & private consultation journeys",
+            text: "Bespoke consultation booking, private viewing requests or direct checkout flows tailored to your sales model.",
+          },
+          {
+            title: "Trust, care & provenance",
+            text: "Artisan notes, material care guides, certificate details and clear studio contact information that reassure discerning buyers.",
+          },
+        ],
+      },
+      {
+        label: "Commercial Impact",
+        heading: "Bridging physical and digital",
+        body:
+          "We help premium retailers unify their physical presence and online storefront — from store locators and private appointment booking to unified customer communication.",
+      },
+    ],
+    related: [
+      { title: "Fashion & Brand Websites", href: "/services/fashion-websites" },
+      { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "Custom Dashboards & BI", href: "/services/dashboards-analytics" },
+    ],
+  },
+
+  // ALIAS / BACKWARDS-COMPATIBLE SERVICE: Website Development
+  {
+    slug: "web-development",
+    kind: "service",
+    hierarchy: "primary",
+    title: "Website Development",
+    metaTitle: "Custom Website Development for Brands",
+    metaDescription:
+      "Custom website development for fashion, clothing and premium retail brands. Responsive architecture, clean code, accessibility and technical SEO.",
+    canonicalPath: "/services/fashion-websites",
+    headline: ["Websites built", "around the brand"],
+    intro:
+      "Aurexis designs and builds considered websites for fashion labels, clothing brands and businesses with a distinct visual identity.",
+    audience:
+      "Brands launching online, businesses outgrowing restrictive templates, and studios looking for custom engineering.",
+    sections: [
+      {
+        label: "Focus",
+        heading: "Custom design & engineering",
+        items: [
+          {
+            title: "Brand-led websites",
+            text: "Custom digital presence built around your brand identity, typography and art direction.",
+          },
+          {
+            title: "Technical foundations",
+            text: "Rapid loading speeds, accessibility compliance, clean responsive layouts and search engine readiness.",
+          },
+        ],
+      },
+    ],
+    related: [
+      { title: "Fashion & Brand Websites", href: "/services/fashion-websites" },
+      { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "Premium Retail Websites", href: "/services/premium-retail" },
+    ],
+  },
+
+  // 04. SUPPORTING CAPABILITY: Search & Performance
   {
     slug: "seo",
     kind: "service",
-    title: "SEO & Optimisation",
-    metaTitle: "Technical SEO & E-commerce Optimisation",
+    hierarchy: "supporting",
+    title: "Search & Performance",
+    metaTitle: "Technical SEO & Website Performance for Retail",
     metaDescription:
-      "Technical and on-page SEO for websites and online stores: crawlability, indexation, metadata, structured data, product page optimisation, performance and ongoing reporting.",
-    headline: ["Found by the", "right customers"],
+      "Technical SEO, semantic crawlability, structured data and conversion analytics for fashion and retail websites and online stores.",
+    canonicalPath: "/services/seo",
+    headline: ["Visible, fast", "and search-ready"],
     intro:
-      "Search visibility is built on solid technical foundations and useful pages. We fix what holds a site back, improve the pages that matter most, and report on progress honestly.",
+      "Great design only succeeds commercially if customers can discover it. We engineer technical SEO, semantic HTML, structured data and performance optimisation directly into our websites so search engines understand your catalogue.",
     audience:
-      "Businesses with an existing site or store that is underperforming in search, and new sites that want to launch on the right footing.",
+      "Brands wanting organic search visibility, online stores looking to recover or expand rankings, and businesses seeking clear analytics.",
     sections: [
       {
-        label: "Technical",
-        heading: "Making your site easy to crawl and understand",
+        label: "Technical SEO",
+        heading: "Search foundations that matter",
         items: [
-          { title: "Crawlability and indexation", text: "Sitemaps, robots directives, status codes, redirects and canonical URLs configured correctly." },
-          { title: "Metadata and internal linking", text: "Unique titles and descriptions, logical heading structure and links that connect related pages." },
-          { title: "Structured data", text: "Markup that reflects what is actually on the page, such as organisation, breadcrumbs and genuine product information." },
-          { title: "Performance and mobile usability", text: "Faster pages and layouts that work properly on phones." },
+          {
+            title: "Crawlability and indexation",
+            text: "Clean routing, XML sitemaps, canonical links and robots directives that make sure Google indexes the right pages.",
+          },
+          {
+            title: "Schema & structured data",
+            text: "JSON-LD schema markup for Organization, Products, Services and Breadcrumbs to earn rich search results.",
+          },
+          {
+            title: "Core Web Vitals & speed",
+            text: "Optimised image delivery, modern formats, minimal layout shifts and fast server response times.",
+          },
+          {
+            title: "On-page content architecture",
+            text: "Logical H1–H3 hierarchy, semantic HTML landmarks and natural keyword integration for fashion and retail search queries.",
+          },
         ],
       },
       {
-        label: "On-page",
-        heading: "Product and category pages",
-        body: "For online stores, product and category pages are usually where search traffic is won or lost. We improve their structure, content and internal linking so they are more useful to customers and clearer to search engines.",
-      },
-      {
-        label: "Ongoing",
-        heading: "Reporting and prioritised improvements",
-        body: "We set up Search Console and analytics where they are missing, then report on what changed and what we recommend next, in plain language and in order of likely impact.",
+        label: "Measurement",
+        heading: "Clear reporting, not vanity numbers",
+        body:
+          "We set up Google Search Console and clean analytics tracking so you can see which search queries and pages drive genuine customer enquiries and sales.",
       },
     ],
-    note: "SEO is ongoing work. Rankings depend on competition, content and factors outside anyone's direct control, so no particular position or traffic level is guaranteed.",
     related: [
-      { title: "E-commerce development", href: "/services/ecommerce" },
-      { title: "Website development", href: "/services/web-development" },
-      { title: "E-commerce businesses", href: "/industries/ecommerce" },
+      { title: "Fashion & Brand Websites", href: "/services/fashion-websites" },
+      { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "Connected Systems", href: "/services/integrations-automation" },
     ],
   },
+
+  // 05. SUPPORTING CAPABILITY: Business Intelligence
   {
     slug: "dashboards-analytics",
     kind: "service",
-    title: "Custom Dashboards & Analytics",
-    metaTitle: "Custom Business Dashboards & Analytics",
+    hierarchy: "supporting",
+    title: "Business Intelligence",
+    metaTitle: "Retail Dashboards & Business Intelligence",
     metaDescription:
-      "Custom dashboards for growing businesses: sales and order visibility, inventory reporting, lead tracking, e-commerce performance and consolidated operational KPIs.",
-    headline: ["Clearer view of", "your business"],
+      "Custom reporting interfaces and data visualisation connecting sales, inventory and customer metrics for growing brands.",
+    canonicalPath: "/services/dashboards-analytics",
+    headline: ["Clarity across", "your commercial data"],
     intro:
-      "As a business grows, the numbers end up spread across a store, spreadsheets and several tools. A custom dashboard brings the figures you rely on into one place, built around the decisions you actually make.",
+      "As an e-commerce or retail business grows, data becomes fragmented across storefronts, payment gateways and inventory sheets. We design and build custom dashboards that provide a single, clear view of your operational metrics.",
     audience:
-      "Growing retail and e-commerce businesses that spend too much time assembling reports by hand or switching between systems to answer simple questions.",
+      "Growing fashion and retail brands that need consolidated reporting on orders, best-selling lines, stock and customer acquisition.",
     sections: [
       {
-        label: "Use cases",
-        heading: "What a dashboard can show",
+        label: "Capabilities",
+        heading: "Dashboards built for your workflow",
         items: [
-          { title: "Sales and order visibility", text: "Daily, weekly and seasonal views of orders and revenue." },
-          { title: "Inventory reporting", text: "Stock levels, sell-through and items that need attention." },
-          { title: "Customer and lead tracking", text: "Where enquiries and customers come from and how they progress." },
-          { title: "E-commerce performance", text: "Conversion, average order value and product performance." },
-          { title: "Operational KPIs", text: "The handful of measures your team checks most often." },
-          { title: "Consolidated data", text: "Figures from several systems combined into a single view." },
+          {
+            title: "Unified sales reporting",
+            text: "Consolidated sales data from your online store, wholesale channels and physical points of sale.",
+          },
+          {
+            title: "Inventory and replenishment alerts",
+            text: "Real-time visibility into fast-moving sizes, low stock thresholds and seasonal sell-through rates.",
+          },
+          {
+            title: "Clean, bespoke data visualisation",
+            text: "Custom interfaces designed for your team, removing clutter and displaying the exact KPIs you need to make decisions.",
+          },
         ],
       },
-      {
-        label: "Scope",
-        heading: "Feasibility comes first",
-        body: "Every dashboard depends on what data is available, which systems hold it and whether those systems allow access. We start with a feasibility assessment, then propose a scope based on what is practical for your business.",
-      },
     ],
-    note: "This is a custom engineering service, not an off-the-shelf product. Any demonstrations we share use synthetic data and are clearly labelled as such.",
     related: [
-      { title: "Integrations and automation", href: "/services/integrations-automation" },
-      { title: "E-commerce development", href: "/services/ecommerce" },
-      { title: "E-commerce businesses", href: "/industries/ecommerce" },
+      { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "Connected Systems", href: "/services/integrations-automation" },
+      { title: "Search & Performance", href: "/services/seo" },
     ],
   },
+
+  // 06. SUPPORTING CAPABILITY: Connected Systems
   {
     slug: "integrations-automation",
     kind: "service",
-    title: "Integrations & Automation",
-    metaTitle: "API Integrations & Business Automation",
+    hierarchy: "supporting",
+    title: "Connected Systems",
+    metaTitle: "E-commerce Integrations & Connected Systems",
     metaDescription:
-      "Website and CRM integrations, API connections, data synchronisation, lead workflows, reporting pipelines and practical operational automation.",
-    headline: ["Systems that", "work together"],
+      "API connections, payment gateways, inventory sync and automated workflows connecting your digital storefront to operational tools.",
+    canonicalPath: "/services/integrations-automation",
+    headline: ["Connected systems,", "smoother operations"],
     intro:
-      "Many small operational problems come from systems that do not talk to each other. We connect the tools you already use so information moves where it needs to, without manual copying.",
+      "Your digital storefront shouldn't operate as an island. We connect websites with payment processors, inventory management tools, CRM platforms and dispatch couriers to eliminate manual data entry and keep operations running smoothly.",
     audience:
-      "Businesses whose website, store, CRM and internal tools operate in isolation, creating repeated admin work or inconsistent data.",
+      "Retail brands seeking automated order handling, payment synchronization and seamless third-party software connections.",
     sections: [
       {
-        label: "Project types",
-        heading: "Practical connections",
+        label: "Connectivity",
+        heading: "Connecting the tools you rely on",
         items: [
-          { title: "Website and CRM integrations", text: "Enquiries and customer details delivered to the right place automatically." },
-          { title: "API connections", text: "Connecting your website or store to third-party services." },
-          { title: "Data synchronisation", text: "Keeping product, stock or customer data consistent across systems." },
-          { title: "Form and lead workflows", text: "Routing, notifications and follow-ups for new enquiries." },
-          { title: "Reporting pipelines", text: "Moving data into a format that supports reporting and dashboards." },
-          { title: "Operational automation", text: "Removing repetitive manual steps from everyday processes." },
+          {
+            title: "Payment gateway integration",
+            text: "Secure connections with South African and international payment providers for cards, instant EFT, and buy-now-pay-later.",
+          },
+          {
+            title: "Inventory and ERP synchronization",
+            text: "Real-time stock level synchronization between your online store and warehouse or retail POS systems.",
+          },
+          {
+            title: "Workflow automation",
+            text: "Automated customer email notifications, courier booking triggers and order status updates that save team hours.",
+          },
         ],
-      },
-      {
-        label: "Approach",
-        heading: "Scoped around your tools",
-        body: "What can be integrated depends on the systems involved and the access they provide. We review your current setup, confirm what is technically possible and recommend the simplest solution that solves the problem.",
       },
     ],
     related: [
-      { title: "Dashboards and analytics", href: "/services/dashboards-analytics" },
-      { title: "Website development", href: "/services/web-development" },
+      { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "Custom Dashboards & BI", href: "/services/dashboards-analytics" },
+      { title: "Fashion & Brand Websites", href: "/services/fashion-websites" },
     ],
   },
 ];
@@ -303,122 +406,127 @@ export const industryPages: ContentPageData[] = [
     slug: "fashion",
     kind: "industry",
     title: "Fashion & Clothing Brands",
-    metaTitle: "Websites & Online Stores for Fashion Brands",
+    metaTitle: "Digital Design for Fashion & Clothing Brands",
     metaDescription:
-      "Websites and e-commerce for independent fashion labels, streetwear and direct-to-consumer clothing brands. Collections, lookbooks, sizing, mobile shopping and launch campaigns.",
-    headline: ["Built for", "fashion labels"],
+      "Custom websites and e-commerce for independent clothing labels, streetwear brands and fashion direct-to-consumer businesses.",
+    canonicalPath: "/industries/fashion",
+    headline: ["Websites for", "fashion & clothing"],
     intro:
-      "A clothing brand lives or dies on identity. Your website should carry the same attention to detail as your garments, and make buying them straightforward.",
+      "Fashion is inherently visual and tactile. A digital storefront must convey texture, silhouette, movement and brand attitude. We design websites that give your garments the digital stage they deserve.",
     audience:
-      "Independent fashion labels, streetwear brands, contemporary clothing businesses and direct-to-consumer labels.",
+      "Independent fashion labels, ready-to-wear designers, streetwear brands and apparel businesses in South Africa and internationally.",
     sections: [
       {
-        label: "Identity",
-        heading: "Your brand, not a theme",
-        body: "We design around your art direction, photography and tone of voice, so the site feels like an extension of the brand rather than a generic store with your logo applied.",
-      },
-      {
-        label: "Collections",
-        heading: "Presenting the product properly",
+        label: "Aesthetics",
+        heading: "Honouring the garments",
+        body:
+          "We treat lookbooks, campaign imagery and video with the reverence they require. Clean typography and measured spacing ensure your collections remain the absolute focal point.",
         items: [
-          { title: "Collections and lookbooks", text: "Editorial layouts that let imagery lead while staying easy to shop." },
-          { title: "Product variants and sizing", text: "Clear colour and size selection, size guides and stock visibility." },
-          { title: "Mobile-first shopping", text: "Fast product pages, simple filters and a cart that works one-handed." },
+          {
+            title: "Campaign & drop presentation",
+            text: "Tailored landing experiences for seasonal collections, limited-run drops and capsule collaborations.",
+          },
+          {
+            title: "Fit and fabric detail",
+            text: "Clear garment specifications, fabric compositions and intuitive sizing guides that reduce customer hesitation.",
+          },
+          {
+            title: "Mobile-first discovery",
+            text: "Optimised for rapid, immersive browsing on mobile screens where the majority of fashion discovery happens.",
+          },
         ],
-      },
-      {
-        label: "Launches",
-        heading: "Drops and campaigns",
-        body: "Dedicated landing pages for new collections and limited releases, built to handle attention and point customers straight to the products.",
-      },
-      {
-        label: "Growth",
-        heading: "Visibility and reporting",
-        body: "Product SEO and analytics set up from launch, so you can see which collections and channels are working and where customers drop off.",
       },
     ],
     related: [
-      { title: "E-commerce development", href: "/services/ecommerce" },
-      { title: "Website development", href: "/services/web-development" },
-      { title: "SEO and optimisation", href: "/services/seo" },
+      { title: "Fashion & Brand Websites", href: "/services/fashion-websites" },
+      { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "Search & Performance", href: "/services/seo" },
     ],
   },
   {
     slug: "luxury-retail",
     kind: "industry",
     title: "Luxury & Premium Retail",
-    metaTitle: "Websites for Luxury & Premium Retail Brands",
+    metaTitle: "Websites for Luxury & Premium Retail",
     metaDescription:
-      "Digital experiences for premium accessories, jewellery, fragrance, watch, leather goods and lifestyle brands. Considered presentation, product discovery and trust.",
+      "Considered digital storefronts, jewellery, accessories and premium product presentation engineered for trust and discovery.",
+    canonicalPath: "/industries/luxury-retail",
     headline: ["Considered", "premium retail"],
     intro:
-      "Premium products deserve a digital experience that matches the in-store standard. That means restraint, excellent imagery and a buying or enquiry journey that builds confidence.",
+      "Premium products deserve a digital presence that matches the in-store standard. That means editorial restraint, excellent imagery and a buying or enquiry journey that builds confidence.",
     audience:
-      "Businesses selling premium accessories, jewellery, fragrances, watches, leather goods and lifestyle products.",
+      "Businesses selling premium accessories, jewellery, fragrances, watches, leather goods and curated lifestyle products.",
     sections: [
       {
         label: "Presentation",
         heading: "Quality you can see",
-        body: "Typography, spacing and imagery are treated with the same care as packaging and display. Details such as materials, craftsmanship and provenance are given room to be read.",
+        body:
+          "Typography, spacing and imagery are treated with the same care as packaging and boutique display. Details such as materials, craftsmanship and provenance are given room to be appreciated.",
       },
       {
         label: "Discovery",
         heading: "Helping customers find the right piece",
         items: [
-          { title: "Catalogues and online stores", text: "Whether you sell online or by enquiry, products are organised for browsing and comparison." },
-          { title: "Enquiry and purchase flows", text: "Appointment, reservation or direct purchase journeys, depending on how you sell." },
-          { title: "Trust and credibility", text: "Clear policies, care information and contact options that reassure higher-value buyers." },
+          {
+            title: "Catalogues and online stores",
+            text: "Whether you sell online or by enquiry, products are organised for effortless browsing and comparison.",
+          },
+          {
+            title: "Enquiry and purchase flows",
+            text: "Private appointment, reservation or direct purchase journeys tailored to your commercial model.",
+          },
+          {
+            title: "Trust and credibility",
+            text: "Clear provenance, care guidelines and direct studio contact options that reassure higher-value buyers.",
+          },
         ],
-      },
-      {
-        label: "Performance",
-        heading: "Fast, visible and measured",
-        body: "High-quality imagery delivered efficiently, sound technical SEO and measurement that shows how customers move from discovery to enquiry or sale.",
       },
     ],
     related: [
-      { title: "Website development", href: "/services/web-development" },
-      { title: "E-commerce development", href: "/services/ecommerce" },
-      { title: "SEO and optimisation", href: "/services/seo" },
+      { title: "Premium Retail Websites", href: "/services/premium-retail" },
+      { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "Fashion & Brand Websites", href: "/services/fashion-websites" },
     ],
   },
   {
     slug: "ecommerce",
     kind: "industry",
     title: "E-commerce Businesses",
-    metaTitle: "Redevelopment, SEO & Reporting for Online Stores",
+    metaTitle: "E-commerce Storefront Design & Optimisation",
     metaDescription:
-      "Support for established online stores: usability improvements, redevelopment, technical SEO, integrations and clearer reporting on business performance.",
+      "Storefront redevelopment, mobile usability and technical SEO for active e-commerce brands in South Africa and internationally.",
+    canonicalPath: "/industries/ecommerce",
     headline: ["Stronger", "online stores"],
     intro:
       "If your store is already trading, the priority is usually improving what exists: a smoother customer experience, better search visibility and clearer insight into how the business is performing.",
     audience:
-      "Established e-commerce businesses that need improved usability, redevelopment, technical SEO, integrations or reporting.",
+      "Established direct-to-consumer and retail brands that need improved usability, storefront redevelopment, technical SEO, integrations or reporting.",
     sections: [
       {
         label: "Experience",
-        heading: "Fixing friction",
-        body: "We review navigation, product pages, search and checkout to identify where customers struggle, then prioritise improvements by likely impact and effort.",
-      },
-      {
-        label: "Foundations",
-        heading: "Performance and search",
+        heading: "Eliminating friction",
+        body:
+          "We review navigation, collection filtering, product pages and checkout to identify where customers drop off, then prioritise improvements by commercial impact.",
         items: [
-          { title: "Storefront performance", text: "Faster pages, lighter assets and more stable layouts." },
-          { title: "Technical SEO", text: "Indexation, structured data and category and product page improvements." },
-          { title: "Redevelopment", text: "A rebuild where the current platform or codebase is holding the business back." },
+          {
+            title: "Storefront performance",
+            text: "Faster loading speeds, optimised image weights and responsive stability across all devices.",
+          },
+          {
+            title: "Technical SEO & search indexation",
+            text: "Structured product data, clean canonical URLs and collection architecture that capture high-intent search traffic.",
+          },
+          {
+            title: "Storefront redevelopment",
+            text: "Rebuilding slow or restrictive legacy themes onto modern, high-speed architectures without disrupting current trade.",
+          },
         ],
-      },
-      {
-        label: "Operations",
-        heading: "Visibility into the business",
-        body: "Integrations between your store and other systems, and custom dashboards that bring sales, stock and customer data together, scoped after a feasibility assessment.",
       },
     ],
     related: [
-      { title: "SEO and optimisation", href: "/services/seo" },
-      { title: "Dashboards and analytics", href: "/services/dashboards-analytics" },
-      { title: "Integrations and automation", href: "/services/integrations-automation" },
+      { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "Search & Performance", href: "/services/seo" },
+      { title: "Custom Dashboards & BI", href: "/services/dashboards-analytics" },
     ],
   },
 ];

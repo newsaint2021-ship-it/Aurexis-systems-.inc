@@ -33,4 +33,41 @@ export function BreadcrumbJsonLd({
   );
 }
 
+export function ServiceJsonLd({
+  name,
+  description,
+  path,
+}: {
+  readonly name: string;
+  readonly description: string;
+  readonly path: string;
+}) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name,
+        description,
+        serviceType: name,
+        url: `${siteConfig.url}${path}`,
+        provider: {
+          "@type": "ProfessionalService",
+          name: siteConfig.name,
+          url: siteConfig.url,
+          founder: {
+            "@type": "Person",
+            name: siteConfig.founder,
+          },
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: siteConfig.city,
+            addressCountry: siteConfig.countryCode,
+          },
+        },
+      }}
+    />
+  );
+}
+
 export default JsonLd;

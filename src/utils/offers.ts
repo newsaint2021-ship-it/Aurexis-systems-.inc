@@ -1,34 +1,30 @@
 export const offers = [
   {
-    service: "Brand-led marketing website",
+    service: "Fashion & Brand Website",
     price: "Project",
   },
   {
-    service: "E-commerce storefront",
+    service: "E-commerce Storefront",
     price: "Project",
   },
   {
-    service: "Website or store redevelopment",
+    service: "Premium Retail Experience",
     price: "Project",
   },
   {
-    service: "Launch and campaign pages",
+    service: "Storefront Redevelopment",
     price: "Project",
   },
   {
-    service: "Technical and on-page SEO",
+    service: "Technical & On-Page SEO",
     price: "Ongoing",
   },
   {
-    service: "Analytics and reporting",
+    service: "Analytics & Performance Reporting",
     price: "Ongoing",
   },
   {
-    service: "Maintenance and improvement",
-    price: "Ongoing",
-  },
-  {
-    service: "Dashboards and integrations",
+    service: "Dashboards & Integrations",
     price: "After assessment",
   },
 ];
