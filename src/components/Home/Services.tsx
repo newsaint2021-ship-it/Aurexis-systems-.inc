@@ -8,6 +8,7 @@ import Bottom3 from "../../../public/images/services/bottom3.jpg";
 import Service1 from "../../../public/images/services/list/serviceDisplay1.jpg";
 import Service2 from "../../../public/images/services/list/serviceDisplay2.jpg";
 import Service4 from "../../../public/images/services/list/serviceDisplay5.jpg";
+import Service3D from "../../../public/images/services/list/serviceDisplay3D.jpg";
 import Header2 from "../Header2";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,13 +32,15 @@ function Services() {
   const serviceRef1 = useRef(null);
   const serviceRef2 = useRef(null);
   const serviceRef3 = useRef(null);
+  const serviceRef4 = useRef(null);
 
   const serviceImage1 = useRef(null);
   const serviceImage2 = useRef(null);
   const serviceImage3 = useRef(null);
+  const serviceImage4 = useRef(null);
 
-  const serviceRef = [serviceRef1, serviceRef2, serviceRef3];
-  const serviceImage = [serviceImage1, serviceImage2, serviceImage3];
+  const serviceRef = [serviceRef1, serviceRef2, serviceRef3, serviceRef4];
+  const serviceImage = [serviceImage1, serviceImage2, serviceImage3, serviceImage4];
 
   const image = useRef(null);
 
@@ -168,6 +171,12 @@ function Services() {
       image: Service4,
       zIndex: "z-[3]",
       alt: "Premium product bottle and packaging curation",
+    },
+    {
+      id: "service4",
+      image: Service3D,
+      zIndex: "z-[4]",
+      alt: "Interactive 3D fashion lookbook and collection presentation",
     },
   ];
 

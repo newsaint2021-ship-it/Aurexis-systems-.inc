@@ -12,6 +12,10 @@ export const offers = [
     price: "Project",
   },
   {
+    service: "3D & Interactive Experience",
+    price: "Project",
+  },
+  {
     service: "Storefront Redevelopment",
     price: "Project",
   },

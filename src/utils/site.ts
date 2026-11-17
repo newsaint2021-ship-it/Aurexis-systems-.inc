@@ -38,8 +38,8 @@ export const footerNav = [
   { title: "Fashion websites", href: "/services/fashion-websites" },
   { title: "E-commerce", href: "/services/ecommerce" },
   { title: "Premium retail", href: "/services/premium-retail" },
+  { title: "3D & Interactive", href: "/services/interactive-3d" },
   { title: "Work", href: "/work" },
-  { title: "Insights", href: "/insights" },
   { title: "About", href: "/about" },
   { title: "Contact", href: "/contact" },
 ];

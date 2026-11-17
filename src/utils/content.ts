@@ -5,6 +5,14 @@ export type ContentSection = {
   items?: { title: string; text?: string }[];
 };
 
+export type ContentMedia = {
+  title: string;
+  caption: string;
+  videoSrc: string;
+  posterSrc: string;
+  aspect?: string;
+};
+
 export type ContentPageData = {
   slug: string;
   kind: "service" | "industry";
@@ -17,6 +25,7 @@ export type ContentPageData = {
   intro: string;
   audience: string;
   sections: ContentSection[];
+  media?: ContentMedia[];
   note?: string;
   related: { title: string; href: string }[];
 };
@@ -105,8 +114,8 @@ export const servicePages: ContentPageData[] = [
     ],
     related: [
       { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "3D & Interactive Experiences", href: "/services/interactive-3d" },
       { title: "Premium Retail Websites", href: "/services/premium-retail" },
-      { title: "Search & Performance", href: "/services/seo" },
     ],
   },
 
@@ -171,8 +180,8 @@ export const servicePages: ContentPageData[] = [
     ],
     related: [
       { title: "Fashion & Brand Websites", href: "/services/fashion-websites" },
+      { title: "3D & Interactive Experiences", href: "/services/interactive-3d" },
       { title: "Search & Performance", href: "/services/seo" },
-      { title: "Connected Systems", href: "/services/integrations-automation" },
     ],
   },
 
@@ -222,7 +231,121 @@ export const servicePages: ContentPageData[] = [
     related: [
       { title: "Fashion & Brand Websites", href: "/services/fashion-websites" },
       { title: "E-commerce Design & Development", href: "/services/ecommerce" },
-      { title: "Custom Dashboards & BI", href: "/services/dashboards-analytics" },
+      { title: "3D & Interactive Experiences", href: "/services/interactive-3d" },
+    ],
+  },
+
+  // 04. PRIMARY SERVICE: 3D & Interactive Experiences
+  {
+    slug: "interactive-3d",
+    kind: "service",
+    hierarchy: "primary",
+    title: "3D & Interactive Experiences",
+    metaTitle: "Interactive 3D & Digital Fashion Experiences",
+    metaDescription:
+      "Immersive 3D product visualisation, web-based environments and interactive fashion lookbooks for clothing labels, luxury and premium retail brands.",
+    canonicalPath: "/services/interactive-3d",
+    headline: ["Immersive 3D", "brand experiences"],
+    intro:
+      "Immersive digital experiences that bring brands, products and collections to life. From interactive 3D product visualisation to digitally art-directed fashion lookbooks, we create engaging ways for audiences to explore and experience a brand.",
+    audience:
+      "Fashion labels, streetwear brands, apparel studios and premium retail businesses seeking to present collections through interactive digital dimensions and elevated lookbooks.",
+    media: [
+      {
+        title: "Interactive 3D Lookbook & Collection Presentation",
+        caption:
+          "Digitally art-directed lookbook motion and garment inspection designed for collection releases and campaign storytelling.",
+        videoSrc: "/brand/interactive-3d-lookbook.mp4",
+        posterSrc: "/brand/interactive-3d-lookbook-poster.jpg",
+      },
+      {
+        title: "Interactive Digital Storefront & Mobile Experience",
+        caption:
+          "Fluid product interaction and direct commerce integration built for seamless mobile browsing.",
+        videoSrc: "/brand/interactive-3d-storefront.mp4",
+        posterSrc: "/brand/interactive-3d-storefront-poster.jpg",
+      },
+    ],
+    sections: [
+      {
+        label: "Capabilities",
+        heading: "Interactive dimensions for modern collections",
+        body:
+          "Static imagery captures garments from fixed angles. Interactive 3D and digital presentation allow customers to inspect silhouettes, examine textures and experience collections with genuine digital depth.",
+        items: [
+          {
+            title: "Interactive 3D product visualisation",
+            text: "Smooth, responsive product interactions allowing customers to inspect clothing and accessories from every angle in real time.",
+          },
+          {
+            title: "Web-based 3D environments",
+            text: "Lightweight, browser-native 3D scenes engineered for fluid performance on mobile devices without heavy plugins or downloads.",
+          },
+          {
+            title: "Interactive fashion lookbooks",
+            text: "Editorial digital lookbooks with seamless motion, dynamic pacing and interactive storytelling built around seasonal drops.",
+          },
+          {
+            title: "Digital collection presentations",
+            text: "Engaging showcase formats for runway reveals, capsule launches and high-consideration product releases.",
+          },
+          {
+            title: "Immersive brand storytelling",
+            text: "Connecting campaign narratives, audio-visual direction and product details into one cohesive brand world.",
+          },
+          {
+            title: "Interactive product experiences",
+            text: "Touch-optimised interactions that bridge the tactile reality of physical garments with digital commerce.",
+          },
+        ],
+      },
+      {
+        label: "Discipline",
+        heading: "Art direction meets browser performance",
+        body:
+          "Interactive 3D on the web only works when it respects user attention and device constraints. We balance visual fidelity with strict asset optimisation to ensure fast initial loads and fluid frame rates.",
+        items: [
+          {
+            title: "Mobile-first performance",
+            text: "Optimised geometry, efficient textures and adaptive frame rates ensuring frictionless interaction across smartphones and tablets.",
+          },
+          {
+            title: "Direct commerce integration",
+            text: "Interactive visualisations that connect directly to your product catalogue, sizing guides and checkout journey.",
+          },
+          {
+            title: "Reduced motion consideration",
+            text: "Accessible fallback states and user controls respecting reduced-motion preferences without breaking the visual hierarchy.",
+          },
+          {
+            title: "Editorial restraint",
+            text: "Technology in service of the garment and brand aesthetic—never gratuitous 3D effects that distract from the product.",
+          },
+        ],
+      },
+      {
+        label: "Foundations",
+        heading: "Every experience includes",
+        items: [
+          {
+            title: "Touch & gesture optimisation",
+            text: "Natural touch controls calibrated for iOS and Android web browsers with zero lag or accidental scrolling conflicts.",
+          },
+          {
+            title: "Fast asset streaming",
+            text: "Progressive geometry and texture streaming to deliver instantaneous visual engagement without blocking page interactivity.",
+          },
+          {
+            title: "SEO and semantic fallbacks",
+            text: "Clean HTML markup, schema metadata and crawlable text alternatives ensuring search engines understand your product content.",
+          },
+        ],
+      },
+    ],
+    related: [
+      { title: "Fashion & Brand Websites", href: "/services/fashion-websites" },
+      { title: "E-commerce Design & Development", href: "/services/ecommerce" },
+      { title: "Premium Retail Websites", href: "/services/premium-retail" },
     ],
   },
 

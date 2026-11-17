@@ -10,19 +10,24 @@ import { spectralBridgeRegular } from "@/fonts/font";
 import { servicePages } from "@/utils/content";
 
 export const metadata: Metadata = {
-  title: "Digital Design & E-commerce Services",
+  title: "Digital Design, E-commerce & 3D Interactive Services",
   description:
-    "Considered websites and e-commerce experiences for fashion, clothing and premium retail brands. Built around brand expression, fast performance and organic search visibility.",
+    "Considered websites, e-commerce storefronts and interactive 3D experiences for fashion, clothing and premium retail brands. Built around brand expression, fast performance and organic search visibility.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Digital Design & E-commerce Services | Aurexis",
+    title: "Digital Design, E-commerce & 3D Interactive Services | Aurexis",
     description:
-      "Considered websites and e-commerce experiences for fashion, clothing and premium retail brands. Built around brand expression, fast performance and organic search visibility.",
+      "Considered websites, e-commerce storefronts and interactive 3D experiences for fashion, clothing and premium retail brands. Built around brand expression, fast performance and organic search visibility.",
     url: "/services",
   },
 };
 
-const primarySlugs = ["fashion-websites", "ecommerce", "premium-retail"];
+const primarySlugs = [
+  "fashion-websites",
+  "ecommerce",
+  "premium-retail",
+  "interactive-3d",
+];
 const supportingSlugs = [
   "seo",
   "dashboards-analytics",
@@ -129,7 +134,7 @@ export default function ServicesPage() {
                 >
                   <div>
                     <span className="text-[13px] text-lightText60 dark:text-darkText60 block mb-2">
-                      {`( 0${index + 4} )`}
+                      {`( 0${index + 5} )`}
                     </span>
                     <h3
                       className={`${spectralBridgeRegular.className} text-[22px] md:text-[26px] leading-[1.1]`}

@@ -5,6 +5,7 @@ import type { ContentPageData } from "@/utils/content";
 import PageHero from "./PageHero";
 import FooterTransition from "../Home/FooterTransition";
 import Next from "../Next";
+import InteractiveMediaShowcase from "./InteractiveMediaShowcase";
 
 const divider = "border-t-[1px] border-t-lightText20 dark:border-t-darkText20";
 
@@ -66,6 +67,8 @@ function ContentPage({ page }: { readonly page: ContentPageData }) {
           </div>
         </section>
       ))}
+
+      {page.media ? <InteractiveMediaShowcase media={page.media} /> : null}
 
       {page.note ? (
         <section className="mt-[6vh] flex justify-end">
